@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>/home/hp/kicad/velo_2/velocomp.sch</source>
+    <date>Сб 14 окт 2017 15:28:04</date>
+    <tool>Eeschema 4.0.7</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>velocomp.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="BT1">
+      <value>LIR2450</value>
+      <footprint>Pin_Headers:Pin_Header_Straight_1x02</footprint>
+      <libsource lib="velocomp-cache" part="Battery-RESCUE-velocomp"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57779297</tstamp>
+    </comp>
+    <comp ref="C1">
+      <value>100nf</value>
+      <footprint>Capacitors_SMD:C_0603_HandSoldering</footprint>
+      <libsource lib="device" part="C_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5778E0DA</tstamp>
+    </comp>
+    <comp ref="D2">
+      <value>NCP603</value>
+      <footprint>TO_SOT_Packages_SMD:SOT-23-5</footprint>
+      <libsource lib="velocomp-rescue" part="NCP603-RESCUE-velocomp"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>577CAC98</tstamp>
+    </comp>
+    <comp ref="C2">
+      <value>1u</value>
+      <footprint>Capacitors_SMD:C_0805_HandSoldering</footprint>
+      <libsource lib="device" part="C_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>577CAECD</tstamp>
+    </comp>
+    <comp ref="C4">
+      <value>1u</value>
+      <footprint>Capacitors_SMD:C_0805_HandSoldering</footprint>
+      <libsource lib="device" part="C_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>577CB359</tstamp>
+    </comp>
+    <comp ref="U1">
+      <value>BK3231</value>
+      <footprint>mylibpcb:hc-05</footprint>
+      <libsource lib="mylibkicad" part="HC-05"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57ACC14B</tstamp>
+    </comp>
+    <comp ref="C7">
+      <value>10uf</value>
+      <footprint>Capacitors_SMD:C_0805_HandSoldering</footprint>
+      <libsource lib="device" part="C_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57ACDA8E</tstamp>
+    </comp>
+    <comp ref="SP1">
+      <value>HC0903A</value>
+      <footprint>Buzzers_Beepers:MagneticBuzzer_ProSignal_ABI-009-RC</footprint>
+      <libsource lib="velocomp-cache" part="SPEAKER"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57AD7EDB</tstamp>
+    </comp>
+    <comp ref="IC1">
+      <value>STM8S003F3P</value>
+      <footprint>Housings_SSOP:SSOP-20_4.4x6.5mm_Pitch0.65mm</footprint>
+      <libsource lib="stm8" part="STM8S003F3P"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57AD9349</tstamp>
+    </comp>
+    <comp ref="C5">
+      <value>1uf</value>
+      <footprint>Capacitors_SMD:C_0805_HandSoldering</footprint>
+      <libsource lib="device" part="C_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57AD94D5</tstamp>
+    </comp>
+    <comp ref="U2">
+      <value>TP4056</value>
+      <footprint>Housings_SOIC:SOIC-8-1EP_3.9x4.9mm_Pitch1.27mm</footprint>
+      <libsource lib="mylibkicad" part="TP4056"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57AD9C31</tstamp>
+    </comp>
+    <comp ref="R1">
+      <value>10k</value>
+      <footprint>Resistors_SMD:R_0603_HandSoldering</footprint>
+      <libsource lib="device" part="R_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57AD9EE1</tstamp>
+    </comp>
+    <comp ref="C3">
+      <value>10uf</value>
+      <footprint>Capacitors_SMD:C_0805_HandSoldering</footprint>
+      <libsource lib="device" part="C_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57ADA04E</tstamp>
+    </comp>
+    <comp ref="SW1">
+      <value>SW_PUSH</value>
+      <footprint>Buttons_Switches_ThroughHole:SW_Tactile_SKHH_Angled</footprint>
+      <libsource lib="velocomp-cache" part="SW_PUSH"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57ADB62C</tstamp>
+    </comp>
+    <comp ref="Y1">
+      <value>8Mgh</value>
+      <footprint>Crystals:Crystal_HC49-U_Vertical</footprint>
+      <libsource lib="device" part="Crystal_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57ADDD5E</tstamp>
+    </comp>
+    <comp ref="C6">
+      <value>22pf</value>
+      <footprint>Capacitors_SMD:C_0603_HandSoldering</footprint>
+      <libsource lib="device" part="C_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57ADDE40</tstamp>
+    </comp>
+    <comp ref="C8">
+      <value>22pf</value>
+      <footprint>Capacitors_SMD:C_0603_HandSoldering</footprint>
+      <libsource lib="device" part="C_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57ADDEBF</tstamp>
+    </comp>
+    <comp ref="J1">
+      <value>USB_B</value>
+      <footprint>mylibpcb:usb5s</footprint>
+      <libsource lib="conn" part="USB_B"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5974D90E</tstamp>
+    </comp>
+    <comp ref="SW2">
+      <value>Herkon</value>
+      <footprint>Resistors_ThroughHole:R_Bare_Metal_Element_L21.3mm_W4.8mm_P20.30mm</footprint>
+      <libsource lib="velocomp-cache" part="SW_PUSH"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5974E5A6</tstamp>
+    </comp>
+    <comp ref="J3">
+      <value>prg</value>
+      <footprint>mylibpcb:wirepad_mini</footprint>
+      <libsource lib="velocomp-cache" part="CONN_01X01"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5974E884</tstamp>
+    </comp>
+    <comp ref="J4">
+      <value>h2</value>
+      <footprint>mylibpcb:wirepadme</footprint>
+      <libsource lib="velocomp-cache" part="CONN_01X01"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5974EBE6</tstamp>
+    </comp>
+    <comp ref="J2">
+      <value>h2_g</value>
+      <footprint>mylibpcb:wirepadme</footprint>
+      <libsource lib="velocomp-cache" part="CONN_01X01"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5974ECDB</tstamp>
+    </comp>
+    <comp ref="Q1">
+      <value>2N7002</value>
+      <footprint>TO_SOT_Packages_SMD:SOT-23</footprint>
+      <libsource lib="device" part="Q_NMOS_GSD"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>599A8B44</tstamp>
+    </comp>
+    <comp ref="D1">
+      <value>LED_Small</value>
+      <footprint>LEDs:LED_0603_HandSoldering</footprint>
+      <libsource lib="device" part="LED_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>599AABE4</tstamp>
+    </comp>
+    <comp ref="J5">
+      <value>kn1</value>
+      <footprint>mylibpcb:wirepad_mini</footprint>
+      <libsource lib="velocomp-cache" part="CONN_01X01"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>599ABC33</tstamp>
+    </comp>
+    <comp ref="J6">
+      <value>kn1</value>
+      <footprint>mylibpcb:wirepad_mini</footprint>
+      <libsource lib="velocomp-cache" part="CONN_01X01"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>599ABDEC</tstamp>
+    </comp>
+    <comp ref="R2">
+      <value>300</value>
+      <footprint>Resistors_SMD:R_0603_HandSoldering</footprint>
+      <libsource lib="device" part="R_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>59CFE398</tstamp>
+    </comp>
+    <comp ref="R3">
+      <value>1k</value>
+      <footprint>Resistors_SMD:R_0603_HandSoldering</footprint>
+      <libsource lib="device" part="R_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>59CFE42D</tstamp>
+    </comp>
+    <comp ref="R6">
+      <value>1k</value>
+      <footprint>Resistors_SMD:R_0603_HandSoldering</footprint>
+      <libsource lib="device" part="R_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>59CFF97F</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="velocomp-cache" part="Battery-RESCUE-velocomp">
+      <fields>
+        <field name="Reference">BT</field>
+        <field name="Value">Battery-RESCUE-velocomp</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="velocomp-cache" part="CONN_01X01">
+      <footprints>
+        <fp>Pin_Header_Straight_1X*</fp>
+        <fp>Pin_Header_Angled_1X*</fp>
+        <fp>Socket_Strip_Straight_1X*</fp>
+        <fp>Socket_Strip_Angled_1X*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">CONN_01X01</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="device" part="C_Small">
+      <description>Unpolarized capacitor</description>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_Small</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="device" part="Crystal_Small">
+      <description>Two pin crystal, small symbol</description>
+      <footprints>
+        <fp>Crystal*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">Y</field>
+        <field name="Value">Crystal_Small</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="mylibkicad" part="HC-05">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">HC-05</field>
+      </fields>
+      <pins>
+        <pin num="1" name="TX" type="output"/>
+        <pin num="2" name="RX" type="input"/>
+        <pin num="11" name="RESET" type="input"/>
+        <pin num="12" name="VCC" type="power_in"/>
+        <pin num="13" name="GND" type="power_in"/>
+        <pin num="21" name="GND" type="power_in"/>
+        <pin num="22" name="GND" type="power_in"/>
+        <pin num="24" name="LED" type="output"/>
+      </pins>
+    </libpart>
+    <libpart lib="device" part="LED_Small">
+      <description>LED, small symbol</description>
+      <footprints>
+        <fp>LED-*</fp>
+        <fp>LED_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">LED_Small</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="velocomp-rescue" part="NCP603-RESCUE-velocomp">
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">NCP603-RESCUE-velocomp</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Vin" type="input"/>
+        <pin num="2" name="GND" type="input"/>
+        <pin num="3" name="ENABLE" type="input"/>
+        <pin num="4" name="ADJ" type="input"/>
+        <pin num="5" name="Vout" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="device" part="Q_NMOS_GSD">
+      <description>Transistor N-MOSFETwith substrate diode (general)</description>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">Q_NMOS_GSD</field>
+      </fields>
+      <pins>
+        <pin num="1" name="G" type="input"/>
+        <pin num="2" name="S" type="passive"/>
+        <pin num="3" name="D" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="device" part="R_Small">
+      <description>Resistor, small symbol</description>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R_Small</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="velocomp-cache" part="SPEAKER">
+      <fields>
+        <field name="Reference">SP</field>
+        <field name="Value">SPEAKER</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="input"/>
+        <pin num="2" name="2" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="stm8" part="STM8S003F3P">
+      <description>16MHz, 8K Flash, 1k RAM, 128 EEPROM, USART, I2C, SPI, TSSOP20</description>
+      <docs>http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/DM00024550.pdf</docs>
+      <footprints>
+        <fp>TSSOP*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">STM8S003F3P</field>
+        <field name="Footprint">Housings_SSOP:TSSOP-20_4.4x6.5mm_Pitch0.65mm</field>
+      </fields>
+      <pins>
+        <pin num="1" name="PD4/TIM2_CH1/BEEP/UART1_CK" type="BiDi"/>
+        <pin num="2" name="PD5/AIN5/UART1_TX" type="BiDi"/>
+        <pin num="3" name="PD6/AIN6/UART1_RX" type="BiDi"/>
+        <pin num="4" name="NRST" type="input"/>
+        <pin num="5" name="OSCIN/PA1" type="BiDi"/>
+        <pin num="6" name="OSCOUT/PA2" type="BiDi"/>
+        <pin num="7" name="VSS" type="power_out"/>
+        <pin num="8" name="Vcap" type="passive"/>
+        <pin num="9" name="VDD" type="power_in"/>
+        <pin num="10" name="[SPI_NSS]TIM2_CH3/PA3" type="BiDi"/>
+        <pin num="11" name="[TIM1_BKIN]I2C_SDA/PB5" type="BiDi"/>
+        <pin num="12" name="[ADC_ETR]I2C_SCL/PB4" type="BiDi"/>
+        <pin num="13" name="[TIM1_CH1N]TIM1_CH3/PC3" type="BiDi"/>
+        <pin num="14" name="[TIM1_CH2N]AIN2/TIM1_CH4/PC4" type="BiDi"/>
+        <pin num="15" name="[TIM2_CH1]SPI_SCK/PC5" type="BiDi"/>
+        <pin num="16" name="[TIM1_CH1]SPI_MOSI/PC6" type="BiDi"/>
+        <pin num="17" name="[TIM1_CH2]SPI_MISO/PC7" type="BiDi"/>
+        <pin num="18" name="PD1/SWIM" type="BiDi"/>
+        <pin num="19" name="PD2/AIN3[TIM2_CH3]" type="BiDi"/>
+        <pin num="20" name="PD3/AIN4/TIM2_CH2" type="BiDi"/>
+      </pins>
+    </libpart>
+    <libpart lib="velocomp-cache" part="SW_PUSH">
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">SW_PUSH</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="mylibkicad" part="TP4056">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TP4056</field>
+      </fields>
+      <pins>
+        <pin num="1" name="TEMP" type="input"/>
+        <pin num="2" name="PROG" type="input"/>
+        <pin num="3" name="GND" type="power_in"/>
+        <pin num="4" name="VDD" type="power_in"/>
+        <pin num="5" name="BAT" type="power_out"/>
+        <pin num="6" name="STBY" type="output"/>
+        <pin num="7" name="CHRG" type="output"/>
+        <pin num="8" name="CE" type="input"/>
+        <pin num="9" name="GND" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="conn" part="USB_B">
+      <description>USB Type B connector</description>
+      <footprints>
+        <fp>USB*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">USB_B</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VBUS" type="power_out"/>
+        <pin num="2" name="D-" type="passive"/>
+        <pin num="3" name="D+" type="passive"/>
+        <pin num="4" name="GND" type="power_out"/>
+        <pin num="5" name="Shield" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="velocomp-rescue">
+      <uri>/home/hp/kicad/velo_2/velocomp-rescue.lib</uri>
+    </library>
+    <library logical="device">
+      <uri>/usr/share/kicad/library/device.lib</uri>
+    </library>
+    <library logical="conn">
+      <uri>/usr/share/kicad/library/conn.lib</uri>
+    </library>
+    <library logical="stm8">
+      <uri>/usr/share/kicad/library/stm8.lib</uri>
+    </library>
+    <library logical="mylibkicad">
+      <uri>/home/hp/kicadlib/mylibkicad.lib</uri>
+    </library>
+    <library logical="velocomp-cache">
+      <uri>/home/hp/kicad/velo_2/velocomp-cache.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="GND">
+      <node ref="C1" pin="2"/>
+      <node ref="BT1" pin="2"/>
+      <node ref="C7" pin="2"/>
+      <node ref="U1" pin="22"/>
+      <node ref="U1" pin="21"/>
+      <node ref="Q1" pin="2"/>
+      <node ref="J2" pin="1"/>
+      <node ref="SW2" pin="2"/>
+      <node ref="J1" pin="5"/>
+      <node ref="J1" pin="4"/>
+      <node ref="SW1" pin="2"/>
+      <node ref="U2" pin="9"/>
+      <node ref="U2" pin="3"/>
+      <node ref="C5" pin="2"/>
+      <node ref="IC1" pin="7"/>
+      <node ref="C8" pin="1"/>
+      <node ref="C6" pin="1"/>
+      <node ref="U1" pin="13"/>
+      <node ref="C3" pin="2"/>
+      <node ref="R1" pin="2"/>
+      <node ref="C4" pin="2"/>
+      <node ref="C2" pin="2"/>
+      <node ref="D2" pin="2"/>
+      <node ref="R3" pin="1"/>
+    </net>
+    <net code="2" name="Net-(C8-Pad2)">
+      <node ref="IC1" pin="6"/>
+      <node ref="Y1" pin="2"/>
+      <node ref="C8" pin="2"/>
+    </net>
+    <net code="3" name="Net-(C6-Pad2)">
+      <node ref="C6" pin="2"/>
+      <node ref="IC1" pin="5"/>
+      <node ref="Y1" pin="1"/>
+    </net>
+    <net code="4" name="/bluen">
+      <node ref="IC1" pin="13"/>
+      <node ref="D2" pin="3"/>
+    </net>
+    <net code="5" name="/PRG">
+      <node ref="J3" pin="1"/>
+      <node ref="IC1" pin="18"/>
+    </net>
+    <net code="6" name="/kn1">
+      <node ref="J6" pin="1"/>
+      <node ref="J5" pin="1"/>
+      <node ref="SW1" pin="1"/>
+      <node ref="IC1" pin="20"/>
+    </net>
+    <net code="7" name="Net-(C5-Pad1)">
+      <node ref="C5" pin="1"/>
+      <node ref="IC1" pin="8"/>
+    </net>
+    <net code="8" name="Net-(R1-Pad1)">
+      <node ref="U2" pin="2"/>
+      <node ref="R1" pin="1"/>
+    </net>
+    <net code="9" name="VDD">
+      <node ref="SP1" pin="2"/>
+      <node ref="C2" pin="1"/>
+      <node ref="D2" pin="1"/>
+      <node ref="C1" pin="1"/>
+      <node ref="BT1" pin="1"/>
+      <node ref="U2" pin="5"/>
+      <node ref="IC1" pin="9"/>
+      <node ref="C7" pin="1"/>
+    </net>
+    <net code="10" name="Net-(Q1-Pad3)">
+      <node ref="SP1" pin="1"/>
+      <node ref="Q1" pin="3"/>
+    </net>
+    <net code="11" name="Net-(D1-Pad1)">
+      <node ref="U2" pin="7"/>
+      <node ref="D1" pin="1"/>
+    </net>
+    <net code="12" name="/TX">
+      <node ref="IC1" pin="2"/>
+      <node ref="R2" pin="2"/>
+    </net>
+    <net code="13" name="Net-(R2-Pad1)">
+      <node ref="U1" pin="2"/>
+      <node ref="R2" pin="1"/>
+      <node ref="R3" pin="2"/>
+    </net>
+    <net code="14" name="Net-(D1-Pad2)">
+      <node ref="D1" pin="2"/>
+      <node ref="R6" pin="1"/>
+    </net>
+    <net code="15" name="/5v">
+      <node ref="J1" pin="1"/>
+      <node ref="U2" pin="8"/>
+      <node ref="R6" pin="2"/>
+      <node ref="U2" pin="4"/>
+      <node ref="C3" pin="1"/>
+    </net>
+    <net code="16" name="Net-(J1-Pad2)">
+      <node ref="J1" pin="2"/>
+    </net>
+    <net code="17" name="Net-(J1-Pad3)">
+      <node ref="J1" pin="3"/>
+    </net>
+    <net code="18" name="/H1">
+      <node ref="IC1" pin="16"/>
+      <node ref="SW2" pin="1"/>
+    </net>
+    <net code="19" name="/spk">
+      <node ref="IC1" pin="1"/>
+      <node ref="Q1" pin="1"/>
+    </net>
+    <net code="20" name="/RX">
+      <node ref="IC1" pin="3"/>
+      <node ref="U1" pin="1"/>
+    </net>
+    <net code="21" name="Net-(U1-Pad11)">
+      <node ref="U1" pin="11"/>
+    </net>
+    <net code="22" name="/con">
+      <node ref="IC1" pin="10"/>
+      <node ref="U1" pin="24"/>
+    </net>
+    <net code="23" name="Net-(IC1-Pad4)">
+      <node ref="IC1" pin="4"/>
+    </net>
+    <net code="24" name="Net-(D2-Pad4)">
+      <node ref="D2" pin="4"/>
+    </net>
+    <net code="25" name="/bluevdd">
+      <node ref="C4" pin="1"/>
+      <node ref="U1" pin="12"/>
+      <node ref="D2" pin="5"/>
+    </net>
+    <net code="26" name="Net-(U2-Pad1)">
+      <node ref="U2" pin="1"/>
+    </net>
+    <net code="27" name="Net-(U2-Pad6)">
+      <node ref="U2" pin="6"/>
+    </net>
+    <net code="28" name="Net-(IC1-Pad19)">
+      <node ref="IC1" pin="19"/>
+    </net>
+    <net code="29" name="Net-(IC1-Pad11)">
+      <node ref="IC1" pin="11"/>
+    </net>
+    <net code="30" name="Net-(IC1-Pad12)">
+      <node ref="IC1" pin="12"/>
+    </net>
+    <net code="31" name="Net-(IC1-Pad14)">
+      <node ref="IC1" pin="14"/>
+    </net>
+    <net code="32" name="Net-(IC1-Pad15)">
+      <node ref="IC1" pin="15"/>
+    </net>
+    <net code="33" name="/H2">
+      <node ref="J4" pin="1"/>
+      <node ref="IC1" pin="17"/>
+    </net>
+  </nets>
+</export>

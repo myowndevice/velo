@@ -1,0 +1,179 @@
+Cmp-Mod V01 Created by PcbNew   date = Пн 10 июл 2017 19:44:56
+
+BeginCmp
+TimeStamp = 57ADC23E
+Path = 
+Reference = G***;
+ValeurCmp = LOGO;
+IdModule  = korpus:nub5035_2;
+EndCmp
+
+BeginCmp
+TimeStamp = 5790666D
+Path = /57779297
+Reference = BT1;
+ValeurCmp = bat;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x02;
+EndCmp
+
+BeginCmp
+TimeStamp = 57906679
+Path = /577CAECD
+Reference = C2;
+ValeurCmp = 1u;
+IdModule  = Capacitors_SMD:C_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 5790667F
+Path = /57ADA04E
+Reference = C3;
+ValeurCmp = 10uf;
+IdModule  = Capacitors_SMD:C_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 57906685
+Path = /577CB359
+Reference = C4;
+ValeurCmp = 1u;
+IdModule  = Capacitors_SMD:C_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 5790668B
+Path = /57AD94D5
+Reference = C5;
+ValeurCmp = 1uf;
+IdModule  = Capacitors_SMD:C_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 579066BA
+Path = /577CAC98
+Reference = D2;
+ValeurCmp = NCP603;
+IdModule  = TO_SOT_Packages_SMD:SOT-23-5;
+EndCmp
+
+BeginCmp
+TimeStamp = 579066D9
+Path = /57AD9349
+Reference = IC1;
+ValeurCmp = STM8S003F3P;
+IdModule  = Housings_SSOP:SSOP-20_4.4x6.5mm_Pitch0.65mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 579855C7
+Path = /57AD9EE1
+Reference = R1;
+ValeurCmp = 10k;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 57ACC352
+Path = /57ACC14B
+Reference = U1;
+ValeurCmp = HC-05;
+IdModule  = mylibpcb:hc-05;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AD9A57
+Path = /57ACDA8E
+Reference = C7;
+ValeurCmp = 10uf;
+IdModule  = Capacitors_SMD:C_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AD9A7F
+Path = /57ADFFA6
+Reference = R2;
+ValeurCmp = 1k;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 57ADA29C
+Path = /57ADFE2C
+Reference = Q1;
+ValeurCmp = irml6401;
+IdModule  = TO_SOT_Packages_SMD:SOT-23;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AF3589
+Path = /5778E0DA
+Reference = C1;
+ValeurCmp = 100nf;
+IdModule  = Capacitors_SMD:C_0603_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AF3594
+Path = /57ADDE40
+Reference = C6;
+ValeurCmp = 14pf;
+IdModule  = Capacitors_SMD:C_0603_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AF359F
+Path = /57ADDEBF
+Reference = C8;
+ValeurCmp = 14pf;
+IdModule  = Capacitors_SMD:C_0603_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 57C067DA
+Path = 
+Reference = REF**;
+ValeurCmp = MountingHole_2.5mm;
+IdModule  = Mounting_Holes:MountingHole_2.5mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 57CAC360
+Path = /57ADDD5E
+Reference = Y1;
+ValeurCmp = 7328;
+IdModule  = mylibpcb:Crystal_Round_Vertical_3mm_my;
+EndCmp
+
+BeginCmp
+TimeStamp = 57CC5C6E
+Path = /57ACC0FC
+Reference = P1;
+ValeurCmp = con;
+IdModule  = mylibpcb:Molex_Microfit3_Header_02x03_Angled_43045-060x_my;
+EndCmp
+
+BeginCmp
+TimeStamp = 57D9763C
+Path = /57AD9C31
+Reference = U2;
+ValeurCmp = TP4056;
+IdModule  = Housings_SOIC:SOIC-8-1EP_3.9x4.9mm_Pitch1.27mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 57D979C1
+Path = /57AD7EDB
+Reference = SP1;
+ValeurCmp = SPEAKER;
+IdModule  = mylibpcb:R1_my;
+EndCmp
+
+BeginCmp
+TimeStamp = 57D979C8
+Path = /57ADB62C
+Reference = SW1;
+ValeurCmp = SW_PUSH;
+IdModule  = mylibpcb:R1_my;
+EndCmp
+
+EndListe
