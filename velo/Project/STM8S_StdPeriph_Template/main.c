@@ -39,12 +39,23 @@
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
 
+//#define BTONLOW 1
+
+#ifdef BTONLOW
 //для экономии памяти напишем прямое обращение к регистрам
+#define btoff   (GPIOD->ODR |= (uint8_t)0b100) //GPIO_WriteHigh(GPIOD,GPIO_PIN_2)
+#define ifbton ((GPIOD->ODR & (uint8_t)0b100)==0) //((GPIO_ReadOutputData(GPIOD) & GPIO_PIN_2)==0)
+#define bton    (GPIOD->ODR &= (uint8_t)(~0b100) ) // GPIO_WriteLow(GPIOD,GPIO_PIN_2))
+#define btchange (GPIOD->ODR ^= (uint8_t)0b100)//GPIO_WriteReverse(GPIOD,GPIO_PIN_2)
+
+#else
+
 #define bton   (GPIOD->ODR |= (uint8_t)0b100) //GPIO_WriteHigh(GPIOD,GPIO_PIN_2)
 #define ifbton ((GPIOD->ODR & (uint8_t)0b100)) //((GPIO_ReadOutputData(GPIOD) & GPIO_PIN_2)==0)
 #define btoff    (GPIOD->ODR &= (uint8_t)(~0b100) ) // GPIO_WriteLow(GPIOD,GPIO_PIN_2))
 #define btchange (GPIOD->ODR ^= (uint8_t)0b100)//GPIO_WriteReverse(GPIOD,GPIO_PIN_2)
 
+#endif
 
 //u32      current_millis = 0;
 u32  timeblue=0;
@@ -88,7 +99,7 @@ uint32_t LSIMeasurment(void);
 
 void clearlocal(void)
 {
-	int i;
+	u8 i;
 	for (i=0;i<10;i++) obs[i]=0;
 	hall[0]=0;hall[1]=0;
 	activetime=0;
@@ -104,8 +115,8 @@ struct s_param {
 	u32 probeg;//пробег в метрах за все время пользования прибором
 	u32 power;//потраченные калории за все время пользования прибором
 	u8 numpoezdki;//номер последней поездки
-	int ks;//контроль скорости
-	int kk;//контроль каденса
+	s8 ks;//контроль скорости
+	s8 kk;//контроль каденса
 	//итого 14байт!
 } param;
 
@@ -124,7 +135,7 @@ struct s_poezdka {
 #define ADDRP 0x4000+14  //адрес фо флеше когда начинаются поездки
 #define NUMBYTEP 28 //колво байт в одной поездке
 
-void playmusic(int t)
+void playmusic(u8 t)
 {
 	//return;
 	//играем музыку на разные лады..
@@ -222,7 +233,7 @@ void readflash(u32 addrf,u32 addr,u8 nbyte)
 	FLASH_Lock(FLASH_MEMTYPE_DATA);
 }
 
-void cleareeprom(int i)
+void cleareeprom(u8 i)
 {
 	if (i)
 	{
@@ -236,7 +247,7 @@ void cleareeprom(int i)
 	saveflash(0x4000,(u32)&param,14);
 	//еще очистить поездки!
 	{
-		int b=0;
+		u8 b=0;
 		poezdka.nump=0;
 		poezdka.fix=0;
 		for (b=0;b<NUMBERP;b++)
@@ -391,7 +402,7 @@ void main(void)
 			printf("t");
 			//printf("%i",(int)timehalt);
 			{
-				int j;
+				u8 j;
 				for (j=0;j<10;j++){
 					printf(":(%i)%li",(int)(j+1)*4,(long)obs[j]);
 				}
@@ -404,7 +415,7 @@ void main(void)
 			kn = FALSE;
 			btchange;
 			
-			if (ifbtoff)
+			if (ifbton)
 				{
 					blueen=TRUE;
 					timeblueoff=120;
@@ -435,7 +446,7 @@ void main(void)
 			//пришло время спать запишем данные поездки во флеш на всякий случай!!
 			if (activetime>1200) //маленькие поездки не фиксируем!
 			{
-				int u;
+				u8 u;
 				poezdka.activetime = activetime;
 				poezdka.power = (u32)power;//оставим целую часть от калорий
 				for (u=0;u<10;u++)
@@ -478,7 +489,7 @@ void main(void)
 			
 			while (isawu)
 			{
-				int i=0;
+				u8 i=0;
 				isawu = i;
 				halt();
 			}
@@ -522,9 +533,9 @@ void main(void)
 		
 		if (RXready) {
 			//надо обработать команду
-			int cmd=0;
-			int start=0;
-			int znak=1;
+			u8 cmd=0;
+			u8 start=0;
+			s8 znak=1;
 			u8* pp;
 			
 			if (flagclr==1 && RXbuff[0]=='y' && RXbuff[1]=='e' && RXbuff[2]=='s')
@@ -543,7 +554,7 @@ void main(void)
 			case 'i':
 				if (RXbuff[1]=='n' && RXbuff[2]=='f' && RXbuff[3]=='o' && RXtek==5) 
 				{
-					int u;
+					u8 u;
 					//выведем инфо о поездках
 					printparam();
 					
@@ -556,7 +567,7 @@ void main(void)
 					
 							printf("t");
 							{
-								int j;
+								u8 j;
 								for (j=0;j<10;j++)
 								{
 									printf(":(%i)%i",(int)(j+1)*4,(int)poezdka.obs[j]);
@@ -604,11 +615,11 @@ void main(void)
 			
 			if (cmd) 
 			{
-				int u;
+				u8 u;
 				u8 rez=0;
-				int r=1;
-				int noerr=1;
-				int ind = RXtek-2;
+				u8 r=1;
+				u8 noerr=1;
+				u8 ind = RXtek-2;
 					
 				//установка параметров
 				for(u=start;u<RXtek-1;u++)
@@ -629,7 +640,7 @@ void main(void)
 				{
 					//установим параметр и выведем сообщение о всех параметрах!
 					if (znak>0) *pp = rez;
-					else *(int *)pp = (int)rez * (-1);
+					else *(s8 *)pp = (s8)rez * (-1);
 
 					saveflash(0x4000,(u32)&param,14);		
 
