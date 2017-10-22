@@ -316,8 +316,8 @@ void main(void)
 
 	//миллисекундный таймер
 	/* Time base configuration */
-	TIM4_TimeBaseInit(TIM4_PRESCALER_128, 57);
-	//TIM4_TimeBaseInit(TIM4_PRESCALER_64, 125);
+	//TIM4_TimeBaseInit(TIM4_PRESCALER_128, 57);
+	TIM4_TimeBaseInit(TIM4_PRESCALER_64, 124);
 	/* Clear TIM4 update flag */
 	TIM4_ClearFlag(TIM4_FLAG_UPDATE);
 	/* Enable update interrupt */
