@@ -237,7 +237,7 @@ U 1 1 57AD7EDB
 P 7400 1100
 F 0 "SP1" H 7300 1350 50  0000 C CNN
 F 1 "HC0903A" H 7300 850 50  0000 C CNN
-F 2 "Buzzers_Beepers:MagneticBuzzer_ProSignal_ABI-009-RC" H 7400 1100 50  0000 C CNN
+F 2 "mylibpcb:hc0903a" H 7400 1100 50  0000 C CNN
 F 3 "" H 7400 1100 50  0000 C CNN
 	1    7400 1100
 	-1   0    0    1   
@@ -762,4 +762,22 @@ Text Notes 5700 3200 0    60   ~ 0
 выключатель между выв 3мм и между крайними тоже\nвысота 5мм
 Wire Wire Line
 	4800 2650 5000 2650
+$Comp
+L R_Small R?
+U 1 1 59ECD965
+P 7450 1900
+F 0 "R?" H 7480 1920 50  0000 L CNN
+F 1 "10k" H 7480 1860 50  0000 L CNN
+F 2 "Resistors_SMD:R_0603_HandSoldering" H 7450 1900 50  0001 C CNN
+F 3 "" H 7450 1900 50  0001 C CNN
+	1    7450 1900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7450 2000 7700 2000
+Connection ~ 7700 2000
+Wire Wire Line
+	7450 1800 7450 1700
+Wire Wire Line
+	7450 1700 7400 1700
 $EndSCHEMATC
