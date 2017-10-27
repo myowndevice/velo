@@ -278,9 +278,8 @@ void main(void)
 	//int i;
 	//char comand;
 	
-	CLK->PCKENR1 = 0;
-	CLK->PCKENR1 |= CLK_PCKENR1_UART2|CLK_PCKENR1_TIM4;
-	CLK->PCKENR2 = 0xFF & 0b01110111;
+	CLK->PCKENR1 = CLK_PCKENR1_UART2 + CLK_PCKENR1_TIM4;
+	CLK->PCKENR2 = 0b01110111;
 	
 	clearlocal();
 	
