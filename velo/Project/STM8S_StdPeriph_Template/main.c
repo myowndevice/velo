@@ -50,10 +50,10 @@
 
 #else
 
-#define bton   (GPIOD->ODR |= (uint8_t)0b100) //GPIO_WriteHigh(GPIOD,GPIO_PIN_2)
-#define ifbton ((GPIOD->ODR & (uint8_t)0b100)) //((GPIO_ReadOutputData(GPIOD) & GPIO_PIN_2)==0)
-#define btoff    (GPIOD->ODR &= (uint8_t)(~0b100) ) // GPIO_WriteLow(GPIOD,GPIO_PIN_2))
-#define btchange (GPIOD->ODR ^= (uint8_t)0b100)//GPIO_WriteReverse(GPIOD,GPIO_PIN_2)
+#define bton   (GPIOC->ODR |= (uint8_t)GPIO_PIN_3) //GPIO_WriteHigh(GPIOC,GPIO_PIN_4)
+#define ifbton ((GPIOC->ODR & (uint8_t)GPIO_PIN_3)) //((GPIO_ReadOutputData(GPIOD) & GPIO_PIN_2)==0)
+#define btoff    (GPIOC->ODR &= (uint8_t)(~GPIO_PIN_3) ) // GPIO_WriteLow(GPIOD,GPIO_PIN_2))
+#define btchange (GPIOC->ODR ^= (uint8_t)GPIO_PIN_3)//GPIO_WriteReverse(GPIOD,GPIO_PIN_2)
 
 #endif
 
@@ -278,16 +278,13 @@ void main(void)
 	//int i;
 	//char comand;
 	
-	CLK->PCKENR1 = CLK_PCKENR1_UART2 + CLK_PCKENR1_TIM4;
+	//CLK->PCKENR1 = 0;
+	CLK->PCKENR1 = CLK_PCKENR1_UART1|CLK_PCKENR1_TIM4;
 	CLK->PCKENR2 = 0b01110111;
 	
 	clearlocal();
 	
 	CLK_HSIPrescalerConfig(CLK_PRESCALER_HSIDIV1);
-	#ifndef SIMUL
-	CLK_ClockSwitchConfig(CLK_SWITCHMODE_AUTO, CLK_SOURCE_HSE, DISABLE, CLK_CURRENTCLOCKSTATE_DISABLE);
-	CLK->CKDIVR |= (uint8_t)(0b11); //CLK_SYSCLKConfig(CLK_PRESCALER_CPUDIV8);
-	#endif
 	
 	haltstart=1;
 	GPIO_Init(GPIOD,GPIO_PIN_3,GPIO_MODE_IN_PU_IT);//knopka
@@ -315,8 +312,8 @@ void main(void)
 
 	//миллисекундный таймер
 	/* Time base configuration */
-	//TIM4_TimeBaseInit(TIM4_PRESCALER_128, 57);
-	TIM4_TimeBaseInit(TIM4_PRESCALER_64, 124);
+	TIM4_TimeBaseInit(TIM4_PRESCALER_64, 124); //надо 57-1!
+	//TIM4_TimeBaseInit(TIM4_PRESCALER_64, 124);
 	/* Clear TIM4 update flag */
 	TIM4_ClearFlag(TIM4_FLAG_UPDATE);
 	/* Enable update interrupt */
@@ -324,23 +321,34 @@ void main(void)
 
 	/* enable interrupts */
 	enableInterrupts();
-
+	
 	/* Enable TIM4 */
 	TIM4_Cmd(ENABLE);
 
 	Delay(1000);//на всякий случай чтобы было время зайти в режим программирования без ресет
+	
+	
+	//halt();
+
+	
 	//для экономии энергии все ноги в LOW или HIZ
 	GPIO_Init(GPIOC,GPIO_PIN_3|GPIO_PIN_4|GPIO_PIN_5,GPIO_MODE_OUT_PP_LOW_SLOW);
 	GPIO_Init(GPIOB,GPIO_PIN_5|GPIO_PIN_4,GPIO_MODE_OUT_OD_HIZ_SLOW);
 	//energo sber	
 	GPIO_Init(GPIOD,GPIO_PIN_4,GPIO_MODE_OUT_PP_LOW_SLOW);//speaker
-	GPIO_Init(GPIOD,GPIO_PIN_2,GPIO_MODE_OUT_OD_HIZ_SLOW);//blue on off
+	GPIO_Init(GPIOC,GPIO_PIN_3,GPIO_MODE_OUT_PP_LOW_SLOW);//blue on off
 
 
 	//нужно чтобы если сел аккумулятор при включении был минимальный расход энергии
 	#ifndef SIMUL
 	halt();//do knopki!!!
 	#endif
+	
+	#ifndef SIMUL
+	CLK_ClockSwitchConfig(CLK_SWITCHMODE_AUTO, CLK_SOURCE_HSE, DISABLE, CLK_CURRENTCLOCKSTATE_DISABLE);
+	CLK->CKDIVR |= (uint8_t)(0b11); //CLK_SYSCLKConfig(CLK_PRESCALER_CPUDIV8);
+	#endif
+	
 	
 	playmusic(1);
 	haltstart = 0;
@@ -484,6 +492,7 @@ void main(void)
 
 			timeawu=255;//255 * 30 = 7600 сек = 2часа !!!
 			
+			/*
 			halt();
 			
 			while (isawu)
@@ -492,6 +501,20 @@ void main(void)
 				isawu = i;
 				halt();
 			}
+			*/
+			isawu=1;
+			
+			//halt after interrupt
+			//CFG->GCR |= CFG_GCR_AL;
+			
+			do
+			{
+				halt();
+				_asm("nop");
+				_asm("nop");
+				//playmusic(5);
+			} while (isawu);
+			
 
 			//выключаем AWU режим
 			isawu=0;
@@ -916,6 +939,10 @@ INTERRUPT_HANDLER(EXTI_PORTC_IRQHandler, 5)
   /* In order to detect unexpected events during development,
      it is recommended to set a breakpoint on the following instruction.
   */
+	//main prog after interrupt
+	//CFG->GCR &= ~CFG_GCR_AL;
+	isawu=0;
+	
 	if ((BitStatus)(GPIO_ReadInputPin(GPIOC,GPIO_PIN_7)) == RESET) {
 			//h1++;
 			//защита от дребезга контактов - отключим прервание на 50мс
@@ -953,6 +980,10 @@ INTERRUPT_HANDLER(EXTI_PORTD_IRQHandler, 6)
   /* In order to detect unexpected events during development,
      it is recommended to set a breakpoint on the following instruction.
   */
+	//main prog after interrupt
+	//CFG->GCR &= ~CFG_GCR_AL;
+	isawu=0;
+	
 	if ((BitStatus)(GPIO_ReadInputPin(GPIOD,GPIO_PIN_3)) == RESET) {
 			//защита от дребезга контактов - отключим прервание на 50мс
 			if( haltstart==0) GPIO_Init(GPIOD,GPIO_PIN_3,GPIO_MODE_IN_PU_NO_IT);
@@ -967,8 +998,9 @@ INTERRUPT_HANDLER(AWU_IRQHandler, 1)
      it is recommended to set a breakpoint on the following instruction.
   */
 	//надо просто прочитать регистр чтобы сбросить флаг прерывания
-	isawu = AWU->CSR;   //AWU_GetFlagStatus();
-	isawu=1;
+	AWU->CSR;   //AWU_GetFlagStatus();
+	//isawu=1;
+	
 	if (timeawu) 
 		timeawu--;
 	else {
