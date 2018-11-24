@@ -1,3 +1,4 @@
+//#define SIMUL  //для работы в симуляторе
 /**
   ******************************************************************************
   * @file    Project/main.c 
@@ -34,7 +35,6 @@
 #define PUTCHAR_PROTOTYPE char putchar (char c)
 #define GETCHAR_PROTOTYPE char getchar (void)
 
-//#define SIMUL  //для работы в симуляторе
 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
@@ -83,7 +83,7 @@ bool kn = FALSE;
 
 u32 hall[2];
 u32 activetime;
-float power;
+u32 power;
 
 uint8_t scor1;//скорость по h1 
 uint8_t scor2;//скорость по h2
@@ -96,6 +96,61 @@ uint8_t RXtek=0;
 
 void Delay (u16 nCount);
 uint32_t LSIMeasurment(void);
+
+#define US(us) ( 1000000.0 / 3000000.0 * us ) //FCPU / 3000
+#define MS(ms) US(ms * 1000) // maximum 10ms
+
+#define _delay( loops ) _asm("$N: \n decw X \n jrne $L \n nop", (u16)loops);
+#define _delay_us(us) _delay(US(us))
+
+#define IND_WIRE_1 GPIOB->ODR |= (uint8_t)GPIO_PIN_5//GPIO_WriteHigh(GPIOC,GPIO_PIN_6)
+#define IND_WIRE_0 GPIOB->ODR &= (uint8_t)(~GPIO_PIN_5)  //GPIO_WriteLow(GPIOC,GPIO_PIN_6)
+
+u8 b[4];
+
+
+//индикатор
+void sendindicator(void) {
+	//reset
+	u8 dd;
+	
+	
+	IND_WIRE_0;
+	_delay_us(10);
+	IND_WIRE_1;	
+	_delay_us(480);
+	
+	{
+		u8 i,j;
+		disableInterrupts();
+				
+		for (j=0;j<4;j++) {
+			dd = b[j];
+			
+			for (i=0;i<8;i++) {
+				if (dd & 1) {
+					IND_WIRE_0;			
+					_delay_us(9);
+					IND_WIRE_1;
+					_delay_us(55);
+				} else {
+					IND_WIRE_0;			
+					_delay_us(65);
+					IND_WIRE_1;
+					_delay_us(5);
+				}
+				dd >>= 1;
+			}
+		}
+		//IND_WIRE_0;			
+		//_delay_us(9);
+		//IND_WIRE_1;
+		enableInterrupts();
+		
+	}
+}	
+
+
 
 void clearlocal(void)
 {
@@ -239,6 +294,8 @@ void cleareeprom(u8 i)
 	{
 		param.ves = 80;
 		param.dkoles = 105;
+		param.kk= 0;
+		param.ks= 0;
 	}
 
 	param.probeg= 0;
@@ -250,12 +307,15 @@ void cleareeprom(u8 i)
 		u8 b=0;
 		poezdka.nump=0;
 		poezdka.fix=0;
+		poezdka.probeg=0;
+		poezdka.power=0;
+		poezdka.activetime=0;
 		for (b=0;b<NUMBERP;b++)
 		{
 			saveflash(ADDRP+b*NUMBYTEP,(u32)&poezdka,NUMBYTEP);
 		}
 	}
-	
+	clearlocal();
 	
 }
 
@@ -266,8 +326,13 @@ void nextp(void) {
 			param.numpoezdki=0;
 }		
 
+u32 calc_power(void) {
+	return power*param.ves/3600;
+}
+
+
 void printparam(void){
-	printf("%i(ves-kg)%i (d-cm)%li (ks)%i (kk)%i (prob)%li (cal)%li\n\r",(int)param.numpoezdki,(int)param.ves,(long)param.dkoles,param.ks,param.kk,param.probeg,param.power);
+	printf("%i(ves-kg)%i (d-cm)%li (ks)%i (kk)%i (prob)%li (cal)%li\n\r",(int)param.numpoezdki,(int)param.ves,(long)param.dkoles,(int)param.ks,(int)param.kk,(long)param.probeg,(long)param.power);
 }	
 
 void main(void)
@@ -279,14 +344,24 @@ void main(void)
 	//char comand;
 	
 	//CLK->PCKENR1 = 0;
-	CLK->PCKENR1 = CLK_PCKENR1_UART1|CLK_PCKENR1_TIM4;
-	CLK->PCKENR2 = 0b01110111;
-	
+	//CLK->PCKENR1 = CLK_PCKENR1_UART2|CLK_PCKENR1_UART1|CLK_PCKENR1_TIM4;
+	//CLK->PCKENR2 = 0b11110111;
+	//оставим только TIM4 и UART1
+	CLK->PCKENR1 = ~(CLK_PCKENR1_TIM1+CLK_PCKENR1_TIM2+CLK_PCKENR1_SPI+CLK_PCKENR1_I2C);
+	CLK->PCKENR2 = ~(CLK_PCKENR2_ADC);
 	clearlocal();
 	
 	CLK_HSIPrescalerConfig(CLK_PRESCALER_HSIDIV1);
 	
+	
+	#ifndef SIMUL
+	CLK_ClockSwitchConfig(CLK_SWITCHMODE_AUTO, CLK_SOURCE_HSE, DISABLE, CLK_CURRENTCLOCKSTATE_DISABLE);
+	CLK->CKDIVR |= (uint8_t)(0b11); //CLK_SYSCLKConfig(CLK_PRESCALER_CPUDIV8);
+	#endif
+
+	
 	haltstart=1;
+	GPIO_Init(GPIOD,GPIO_PIN_6,GPIO_MODE_IN_PU_NO_IT);//uart rx
 	GPIO_Init(GPIOD,GPIO_PIN_3,GPIO_MODE_IN_PU_IT);//knopka
 	GPIO_Init(GPIOC,GPIO_PIN_7,GPIO_MODE_IN_PU_IT);//H1
 	GPIO_Init(GPIOC,GPIO_PIN_6,GPIO_MODE_IN_PU_IT);//H2
@@ -304,12 +379,6 @@ void main(void)
 
 	BEEP_Cmd(DISABLE);
 	
-	UART1_DeInit();
-  UART1_Init((uint32_t)9600, UART1_WORDLENGTH_8D, UART1_STOPBITS_1, UART1_PARITY_NO,
-              UART1_SYNCMODE_CLOCK_DISABLE, UART1_MODE_TXRX_ENABLE);
-	
-	UART1_ITConfig(UART1_IT_RXNE_OR,ENABLE);
-
 	//миллисекундный таймер
 	/* Time base configuration */
 	TIM4_TimeBaseInit(TIM4_PRESCALER_64, 124); //надо 57-1!
@@ -344,12 +413,6 @@ void main(void)
 	halt();//do knopki!!!
 	#endif
 	
-	#ifndef SIMUL
-	CLK_ClockSwitchConfig(CLK_SWITCHMODE_AUTO, CLK_SOURCE_HSE, DISABLE, CLK_CURRENTCLOCKSTATE_DISABLE);
-	CLK->CKDIVR |= (uint8_t)(0b11); //CLK_SYSCLKConfig(CLK_PRESCALER_CPUDIV8);
-	#endif
-	
-	
 	playmusic(1);
 	haltstart = 0;
 
@@ -359,7 +422,7 @@ void main(void)
 	//сбросим кнопку потому что мы ей могли будить прибор
 	kn = FALSE;
 	
-	timeblueoff = 120;
+	timeblueoff = 255;
 	timehalt    = 120;
 	
 	
@@ -386,34 +449,78 @@ void main(void)
 		
 	}
 
+	UART1_DeInit();
+  UART1_Init((uint32_t)9600, UART1_WORDLENGTH_8D, UART1_STOPBITS_1, UART1_PARITY_NO,
+              UART1_SYNCMODE_CLOCK_DISABLE, UART1_MODE_TXRX_ENABLE);
+	
+	UART1_ITConfig(UART1_IT_RXNE_OR,ENABLE);
+	
+	//on indicator!
+	GPIO_Init(GPIOD,GPIO_PIN_2,GPIO_MODE_OUT_PP_HIGH_SLOW);//blue on off
+	
 	/* Infinite loop */
   while (1)
   {
 		#ifdef SIMUL
 		//в симуляторе не работают прервания, поэтому делаем вид сами
-		activetime++;
+		//activetime++;
 		//current_millis++;
-		obs[activetime%10]++;
-		if (current_millis % 50==0){
-			if (timehalt) timehalt--;
-		}	
+		//obs[activetime%10]++;
+		//if (current_millis % 50==0){
+			//if (timehalt) timehalt--;
+		//}	
 		#endif
 		
 		
-		if (timeblue==0 && blueen) {
+		if (timeblue==0) {
 			//каждые 2 сек будем выводить на экран что то и считать все подряд
+			u8 indscor,indob;
+			
 			timeblue = 2;
-			
-			printf("(cad)%i (SCOR)%i (all)%li (ob)%li (prob)%li (cal)%li (atime)%li\n\r",(int)scor1,(int)scor2,(long)(hall[0]+hall[1]),(long)(hall[0]),(long)(hall[1]*(long)param.dkoles*PI/100/100),(long)power,activetime);
-			
-			printf("t");
-			//printf("%i",(int)timehalt);
-			{
-				u8 j;
-				for (j=0;j<10;j++){
-					printf(":(%i)%li",(int)(j+1)*4,(long)obs[j]);
+		
+			//indicator!
+			if(1==1) {
+				indscor=0;
+				indob=0;
+				//scor1 = 30;
+				//scor2 = 90;
+				
+				if (scor1>4) {
+					indscor = (scor1-4)/4;
+					if (indscor > 8 ) indscor = 0xff;
+					else indscor = 0xff >> (8-indscor);
+				}	
+				if (scor2>20) {
+					indob = (scor2-20)/10;
+					if (indob> 8 ) indob= 0xff;
+					else indob= 0xff >> (8-indob);
 				}
+				
+				//b[0]=0;
+				b[1]=indscor;
+				b[2]=indob;
+				//b[3]=0;
+				
+				sendindicator();
+			
+			}
+			
+			if (blueen) {
+				
+				printf("(cad)%i (SCOR)%i (all)%li (ob)%li (prob)%li (cal)%li (atime)%li\n\r",(int)scor1,(int)scor2,(long)(hall[0]+hall[1]),(long)(hall[0]),(long)(hall[1]*(long)param.dkoles*PI/100/100),(long)calc_power(),activetime);
 				printf("\n\r");
+				
+				
+				printf("t");
+				//printf("%i",(int)timehalt);
+				{
+					u8 j;
+					for (j=0;j<10;j++){
+						printf(":(%i)%li",(int)(j+1)*4,(long)obs[j]);
+					}
+					printf("\n\r");
+				}
+				
 			}
 		}	
 		
@@ -450,12 +557,14 @@ void main(void)
 			btoff;//выкл блютус
 			blueen=FALSE;
 			
+			GPIO_Init(GPIOD,GPIO_PIN_2,GPIO_MODE_OUT_PP_LOW_SLOW);//blue on off
+			
 			//пришло время спать запишем данные поездки во флеш на всякий случай!!
 			if (activetime>1200) //маленькие поездки не фиксируем!
 			{
 				u8 u;
 				poezdka.activetime = activetime;
-				poezdka.power = (u32)power;//оставим целую часть от калорий
+				poezdka.power = (u32)calc_power();//оставим целую часть от калорий
 				for (u=0;u<10;u++)
 				{
 					poezdka.obs[u]=0;
@@ -515,7 +624,7 @@ void main(void)
 				//playmusic(5);
 			} while (isawu);
 			
-
+			
 			//выключаем AWU режим
 			isawu=0;
 			AWU_DeInit();
@@ -526,16 +635,18 @@ void main(void)
 			
 			playmusic(1);
 
+			GPIO_Init(GPIOD,GPIO_PIN_2,GPIO_MODE_OUT_PP_HIGH_SLOW);//blue on off
+			
 			kn=FALSE;
 		}	
 		
-		if (errspeed > 20 && time_errspeed == 0)
+		if ((errspeed > 20) && (time_errspeed == 0))
 		{
 			time_errspeed = 30;
 			playmusic(5);
 		}
 		
-		if (errcad > 20 && time_errcad == 0)
+		if ((errcad > 20) && (time_errcad == 0))
 		{
 			time_errcad= 30;
 			playmusic(6);
@@ -545,12 +656,13 @@ void main(void)
 		#ifdef SIMUL
 		//для тестирования разбора строки
 		RXready = TRUE;
-		RXbuff[0]='s';
-		RXbuff[1]='-';
-		RXbuff[2]='1';
-		RXbuff[3]='0';
-		RXbuff[4]='6';
-		RXtek = 5;
+		RXbuff[0]='k';
+		RXbuff[1]='1';
+		RXbuff[2]='2';
+		RXbuff[3]='3';
+		RXbuff[4]='9';
+		RXtek = 4;
+		cleareeprom(0);
 		#endif
 		
 		if (RXready) {
@@ -574,7 +686,7 @@ void main(void)
 				printf("yes?\n\r");
 				break;
 			case 'i':
-				if (RXbuff[1]=='n' && RXbuff[2]=='f' && RXbuff[3]=='o' && RXtek==5) 
+				if (RXbuff[1]=='n' && RXbuff[2]=='f' && RXbuff[3]=='o' && RXtek==4) 
 				{
 					u8 u;
 					//выведем инфо о поездках
@@ -615,7 +727,7 @@ void main(void)
 				break;
 			case 's':
 				cmd=3;
-				if(RXbuff[1]='-') {
+				if(RXbuff[1]=='-') {
 					start=2;
 					znak=-1;
 				} else start = 1;
@@ -624,7 +736,7 @@ void main(void)
 				break;
 			case 'k':
 				cmd=3;
-				if(RXbuff[1]='-') {
+				if(RXbuff[1]=='-') {
 					start=2;
 					znak=-1;
 				} else start = 1;
@@ -641,10 +753,10 @@ void main(void)
 				u8 rez=0;
 				u8 r=1;
 				u8 noerr=1;
-				u8 ind = RXtek-2;
+				u8 ind = RXtek-1;
 					
 				//установка параметров
-				for(u=start;u<RXtek-1;u++)
+				for(u=start;u<RXtek;u++)
 				{
 					//v256  start = 2 Rxtek = 5
 					if (RXbuff[ind] < 0x30 ||  RXbuff[ind] > 0x39)
@@ -844,7 +956,7 @@ uint8_t h2=0;
 		if (h1time)	
 		{
 			h1time++;
-			if (h1time==30) 
+			if (h1time==200) //pedali
 				{
 					GPIO_ReadInputPin(GPIOC,GPIO_PIN_7);
 					GPIO_Init(GPIOC,GPIO_PIN_7,GPIO_MODE_IN_PU_IT);
@@ -853,7 +965,7 @@ uint8_t h2=0;
 		if (h2time)	
 		{	
 			h2time++;
-			if (h2time==30) 
+			if (h2time==40) 
 			{
 				GPIO_ReadInputPin(GPIOC,GPIO_PIN_6);
 				GPIO_Init(GPIOC,GPIO_PIN_6,GPIO_MODE_IN_PU_IT);				
@@ -893,6 +1005,7 @@ uint8_t h2=0;
 		if (time_errcad) 		time_errcad--;
 		
 		//раз в секунду
+		//scor2 = 10;
 		if (scor2)
 		{
 			uint32_t ind = scor2/4;
@@ -900,7 +1013,7 @@ uint8_t h2=0;
 				
 			//калории только когда педали крутим!
 			if (scor1)
-				power += (float)param.ves * (float)scor2 / 3600;
+				power += scor2;
 			
 			if (scor2 > 3) {
 				//едем быстрее 3км\ч
@@ -912,7 +1025,9 @@ uint8_t h2=0;
 			
 			//контроль нарушений
 			if (param.ks)	{
-					errspeed = errspeed - (u8)((errspeed32 & (1L <<31))?1:0);
+					if(errspeed32 & (1L <<31) ) {
+						if(errspeed) errspeed--;
+					}
 					errspeed32 <<= 1;
 					if ((param.ks > 0) ? (scor2 < (u8)param.ks) : (scor2 > (u8) (-param.ks)) ) {
 						errspeed++;//есть нарушение скорости!
@@ -921,12 +1036,16 @@ uint8_t h2=0;
 					
 			}
 			
+			//scor1=10;
 			if ( param.kk )	{
-					errcad= errcad- (u8)(errcad& (1L <<31))?1:0;
-					errcad = errcad << 1;
-					if ((param.kk > 0) ? (scor2 < (u8)param.kk) : (scor2 > (u8) (-param.kk)) ) {
+					if(errcad32 & (1L <<31) ) {
+						if(errcad) errcad--;
+					}
+					
+					errcad32 = errcad32 << 1;
+					if ((param.kk > 0) ? (scor1 < (u8)param.kk) : (scor1 > (u8) (-param.kk)) ) {
 						errcad++;//есть нарушение скорости!
-						errcad |= 1;
+						errcad32 |= 1;
 					}
 			}
 		}

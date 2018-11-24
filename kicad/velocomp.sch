@@ -1,38 +1,6 @@
-EESchema Schematic File Version 2
-LIBS:velocomp-rescue
-LIBS:power
-LIBS:device
-LIBS:transistors
-LIBS:conn
-LIBS:linear
-LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
-LIBS:contrib
-LIBS:valves
-LIBS:stm8
-LIBS:mylibkicad
+EESchema Schematic File Version 4
 LIBS:velocomp-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -47,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Battery-RESCUE-velocomp BT1
+L velocomp-rescue:Battery-RESCUE-velocomp BT1
 U 1 1 57779297
 P 4350 4400
 F 0 "BT1" H 4450 4450 50  0000 L CNN
@@ -64,7 +32,7 @@ TX
 Text Label 4800 3050 0    60   ~ 0
 H2
 $Comp
-L C_Small C1
+L velocomp-rescue:C_Small C1
 U 1 1 5778E0DA
 P 3550 1300
 F 0 "C1" H 3560 1370 50  0000 L CNN
@@ -75,7 +43,7 @@ F 3 "" H 3550 1300 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR7
+L power:GND #PWR7
 U 1 1 5778E13F
 P 3550 1400
 F 0 "#PWR7" H 3550 1150 50  0001 C CNN
@@ -86,7 +54,7 @@ F 3 "" H 3550 1400 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VDD #PWR5
+L power:VDD #PWR5
 U 1 1 5778E176
 P 3450 1200
 F 0 "#PWR5" H 3450 1050 50  0001 C CNN
@@ -98,10 +66,10 @@ F 3 "" H 3450 1200 50  0000 C CNN
 $EndComp
 Text Label 4800 2950 0    60   ~ 0
 H1
-Text Label 8450 4050 0    60   ~ 0
+Text Label 5650 6000 0    60   ~ 0
 H2
 $Comp
-L GND #PWR10
+L power:GND #PWR10
 U 1 1 577CA99E
 P 4350 4550
 F 0 "#PWR10" H 4350 4300 50  0001 C CNN
@@ -112,7 +80,7 @@ F 3 "" H 4350 4550 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L NCP603-RESCUE-velocomp D2
+L velocomp-rescue:NCP603-RESCUE-velocomp D2
 U 1 1 577CAC98
 P 6350 4000
 F 0 "D2" H 5550 3450 60  0000 C CNN
@@ -123,7 +91,7 @@ F 3 "" H 6350 4000 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C_Small C2
+L velocomp-rescue:C_Small C2
 U 1 1 577CAECD
 P 4850 4500
 F 0 "C2" H 4860 4570 50  0000 L CNN
@@ -134,7 +102,7 @@ F 3 "" H 4850 4500 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR12
+L power:GND #PWR12
 U 1 1 577CB28E
 P 5050 4700
 F 0 "#PWR12" H 5050 4450 50  0001 C CNN
@@ -146,7 +114,7 @@ F 3 "" H 5050 4700 50  0000 C CNN
 $EndComp
 NoConn ~ 6000 4450
 $Comp
-L C_Small C4
+L velocomp-rescue:C_Small C4
 U 1 1 577CB359
 P 6250 4350
 F 0 "C4" H 6260 4420 50  0000 L CNN
@@ -157,7 +125,7 @@ F 3 "" H 6250 4350 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR15
+L power:GND #PWR15
 U 1 1 577CB3DD
 P 6250 4500
 F 0 "#PWR15" H 6250 4250 50  0001 C CNN
@@ -167,34 +135,23 @@ F 3 "" H 6250 4500 50  0000 C CNN
 	1    6250 4500
 	1    0    0    -1  
 $EndComp
-$Comp
-L VDD #PWR14
-U 1 1 577CB448
-P 5900 3700
-F 0 "#PWR14" H 5900 3550 50  0001 C CNN
-F 1 "VDD" H 5900 3850 50  0000 C CNN
-F 2 "" H 5900 3700 50  0000 C CNN
-F 3 "" H 5900 3700 50  0000 C CNN
-	1    5900 3700
-	-1   0    0    1   
-$EndComp
-Text Label 3250 5550 2    60   ~ 0
+Text Label 2350 5650 2    60   ~ 0
 TX
-Text Label 3900 5400 2    60   ~ 0
+Text Label 3000 5500 2    60   ~ 0
 RX
 $Comp
-L GND #PWR11
+L power:GND #PWR11
 U 1 1 577D2AAC
-P 4350 6600
-F 0 "#PWR11" H 4350 6350 50  0001 C CNN
-F 1 "GND" H 4350 6450 50  0000 C CNN
-F 2 "" H 4350 6600 50  0000 C CNN
-F 3 "" H 4350 6600 50  0000 C CNN
-	1    4350 6600
+P 3450 6700
+F 0 "#PWR11" H 3450 6450 50  0001 C CNN
+F 1 "GND" H 3450 6550 50  0000 C CNN
+F 2 "" H 3450 6700 50  0000 C CNN
+F 3 "" H 3450 6700 50  0000 C CNN
+	1    3450 6700
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR6
+L power:GND #PWR6
 U 1 1 57907976
 P 3500 3350
 F 0 "#PWR6" H 3500 3100 50  0001 C CNN
@@ -205,23 +162,23 @@ F 3 "" H 3500 3350 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L HC-05 U1
+L mylibkicad:HC-05 U1
 U 1 1 57ACC14B
-P 4500 5200
-F 0 "U1" H 4300 5200 60  0000 C CNN
-F 1 "BK3231" H 4700 5200 60  0000 C CNN
-F 2 "myowndevice:hc-05" H 4500 5200 60  0000 C CNN
-F 3 "" H 4500 5200 60  0000 C CNN
-	1    4500 5200
+P 3600 5300
+F 0 "U1" H 3400 5300 60  0000 C CNN
+F 1 "BK3231" H 3800 5300 60  0000 C CNN
+F 2 "myowndevice:hc-05" H 3600 5300 60  0000 C CNN
+F 3 "" H 3600 5300 60  0000 C CNN
+	1    3600 5300
 	1    0    0    -1  
 $EndComp
-Text Label 5250 5700 0    60   ~ 0
+Text Label 4350 5800 0    60   ~ 0
 con
 Text Label 4800 2150 0    60   ~ 0
 con
-NoConn ~ 5100 5400
+NoConn ~ 4200 5500
 $Comp
-L C_Small C7
+L velocomp-rescue:C_Small C7
 U 1 1 57ACDA8E
 P 3750 1300
 F 0 "C7" H 3760 1370 50  0000 L CNN
@@ -232,7 +189,7 @@ F 3 "" H 3750 1300 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L SPEAKER SP1
+L velocomp-rescue:SPEAKER SP1
 U 1 1 57AD7EDB
 P 7400 1100
 F 0 "SP1" H 7300 1350 50  0000 C CNN
@@ -243,7 +200,7 @@ F 3 "" H 7400 1100 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L STM8S003F3P IC1
+L velocomp-rescue:STM8S003F3P IC1
 U 1 1 57AD9349
 P 3500 2450
 F 0 "IC1" H 2350 3250 50  0000 L CNN
@@ -254,7 +211,7 @@ F 3 "" H 3450 2050 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C_Small C5
+L velocomp-rescue:C_Small C5
 U 1 1 57AD94D5
 P 2100 3150
 F 0 "C5" H 2110 3220 50  0000 L CNN
@@ -265,7 +222,7 @@ F 3 "" H 2100 3150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR4
+L power:GND #PWR4
 U 1 1 57AD96D3
 P 2100 3250
 F 0 "#PWR4" H 2100 3000 50  0001 C CNN
@@ -276,7 +233,7 @@ F 3 "" H 2100 3250 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L TP4056 U2
+L mylibkicad:TP4056 U2
 U 1 1 57AD9C31
 P 2400 4000
 F 0 "U2" H 2400 4000 60  0000 C CNN
@@ -289,7 +246,7 @@ $EndComp
 Text Label 1150 4600 0    60   ~ 0
 5v
 $Comp
-L GND #PWR1
+L power:GND #PWR1
 U 1 1 57AD9E56
 P 1400 4500
 F 0 "#PWR1" H 1400 4250 50  0001 C CNN
@@ -300,7 +257,7 @@ F 3 "" H 1400 4500 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R_Small R1
+L velocomp-rescue:R_Small R1
 U 1 1 57AD9EE1
 P 1600 4350
 F 0 "R1" H 1630 4370 50  0000 L CNN
@@ -311,7 +268,7 @@ F 3 "" H 1600 4350 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L C_Small C3
+L velocomp-rescue:C_Small C3
 U 1 1 57ADA04E
 P 1550 4750
 F 0 "C3" H 1560 4820 50  0000 L CNN
@@ -322,7 +279,7 @@ F 3 "" H 1550 4750 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR2
+L power:GND #PWR2
 U 1 1 57ADA085
 P 1550 4950
 F 0 "#PWR2" H 1550 4700 50  0001 C CNN
@@ -334,7 +291,7 @@ F 3 "" H 1550 4950 50  0000 C CNN
 $EndComp
 NoConn ~ 2950 4500
 $Comp
-L SW_PUSH SW1
+L velocomp-rescue:SW_PUSH SW1
 U 1 1 57ADB62C
 P 6600 2650
 F 0 "SW1" H 6750 2760 50  0000 C CNN
@@ -345,7 +302,7 @@ F 3 "" H 6600 2650 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Crystal_Small Y1
+L velocomp-rescue:Crystal_Small Y1
 U 1 1 57ADDD5E
 P 5300 1950
 F 0 "Y1" H 5300 2050 50  0000 C CNN
@@ -356,7 +313,7 @@ F 3 "" H 5300 1950 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C_Small C6
+L velocomp-rescue:C_Small C6
 U 1 1 57ADDE40
 P 5500 1700
 F 0 "C6" H 5510 1770 50  0000 L CNN
@@ -367,7 +324,7 @@ F 3 "" H 5500 1700 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C_Small C8
+L velocomp-rescue:C_Small C8
 U 1 1 57ADDEBF
 P 5650 1700
 F 0 "C8" H 5660 1770 50  0000 L CNN
@@ -378,7 +335,7 @@ F 3 "" H 5650 1700 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR13
+L power:GND #PWR13
 U 1 1 57ADDF9F
 P 5550 1500
 F 0 "#PWR13" H 5550 1250 50  0001 C CNN
@@ -395,14 +352,14 @@ Wire Wire Line
 	6250 4500 6250 4450
 Connection ~ 6250 4250
 Wire Wire Line
-	5100 5700 5250 5700
+	4200 5800 4350 5800
 Wire Wire Line
-	4350 6500 4550 6500
-Connection ~ 4450 6500
+	3450 6600 3550 6600
+Connection ~ 3550 6600
 Wire Wire Line
-	4350 6500 4350 6600
+	3450 6600 3450 6700
 Wire Wire Line
-	3850 1200 3450 1200
+	3850 1200 3750 1200
 Connection ~ 3550 1200
 Wire Wire Line
 	3500 1650 3850 1650
@@ -416,9 +373,9 @@ Wire Wire Line
 Wire Wire Line
 	2100 3050 2200 3050
 Wire Wire Line
-	1150 4600 1900 4600
+	1150 4600 1550 4600
 Wire Wire Line
-	1400 4500 1900 4500
+	1400 4500 1500 4500
 Wire Wire Line
 	1900 4350 1700 4350
 Wire Wire Line
@@ -432,12 +389,12 @@ Connection ~ 1550 4600
 Wire Wire Line
 	1750 4600 1750 3850
 Wire Wire Line
-	1750 3850 3200 3850
+	1750 3850 2950 3850
 Wire Wire Line
 	2950 3850 2950 4250
 Connection ~ 1750 4600
 Wire Wire Line
-	5050 4450 5050 4700
+	5050 4450 5050 4650
 Wire Wire Line
 	4850 4650 5050 4650
 Connection ~ 5050 4650
@@ -449,17 +406,17 @@ Wire Wire Line
 	3800 4600 3800 4250
 Connection ~ 4350 4250
 Wire Wire Line
-	6000 4250 6500 4250
+	6000 4250 6250 4250
 Wire Wire Line
-	4800 1950 5200 1950
+	4800 1950 5100 1950
 Wire Wire Line
-	4800 2050 5700 2050
+	4800 2050 5650 2050
 Wire Wire Line
 	5700 2050 5700 1950
 Wire Wire Line
 	5700 1950 5400 1950
 Wire Wire Line
-	5500 1600 5650 1600
+	5500 1600 5550 1600
 Wire Wire Line
 	5550 1500 5550 1600
 Connection ~ 5550 1600
@@ -472,7 +429,7 @@ Wire Wire Line
 	5100 1800 5100 1950
 Connection ~ 5100 1950
 $Comp
-L GND #PWR16
+L power:GND #PWR16
 U 1 1 57ADEF4C
 P 6900 2750
 F 0 "#PWR16" H 6900 2500 50  0001 C CNN
@@ -490,7 +447,7 @@ Text Label 1800 2250 0    60   ~ 0
 PRG
 Wire Wire Line
 	2200 2250 1800 2250
-Text Label 8650 3900 0    60   ~ 0
+Text Label 5850 5850 0    60   ~ 0
 PRG
 Text Label 5900 2650 0    60   ~ 0
 kn1
@@ -502,12 +459,12 @@ Wire Wire Line
 	2200 2450 1900 2450
 Text Label 6500 4250 0    60   ~ 0
 bluevdd
-Text Label 4750 6500 0    60   ~ 0
+Text Label 3850 6600 0    60   ~ 0
 bluevdd
 Wire Wire Line
-	3800 4250 5050 4250
+	3800 4250 4350 4250
 $Comp
-L VDD #PWR9
+L power:VDD #PWR9
 U 1 1 5974CA85
 P 4350 4100
 F 0 "#PWR9" H 4350 3950 50  0001 C CNN
@@ -522,7 +479,7 @@ Wire Wire Line
 Text Label 5050 4350 2    60   ~ 0
 bluen
 $Comp
-L USB_B J1
+L velocomp-rescue:USB_B J1
 U 1 1 5974D90E
 P 1600 6350
 F 0 "J1" H 1400 6800 50  0000 L CNN
@@ -535,7 +492,7 @@ $EndComp
 Text Label 1900 6150 0    60   ~ 0
 5v
 $Comp
-L GND #PWR3
+L power:GND #PWR3
 U 1 1 5974DCC0
 P 1600 6750
 F 0 "#PWR3" H 1600 6500 50  0001 C CNN
@@ -548,79 +505,79 @@ $EndComp
 Wire Wire Line
 	1500 6750 1600 6750
 $Comp
-L SW_PUSH SW2
+L velocomp-rescue:SW_PUSH SW2
 U 1 1 5974E5A6
-P 8550 3450
-F 0 "SW2" H 8700 3560 50  0000 C CNN
-F 1 "Herkon" H 8550 3370 50  0000 C CNN
-F 2 "Resistors_ThroughHole:R_Bare_Metal_Element_L21.3mm_W4.8mm_P20.30mm" H 8550 3450 50  0000 C CNN
-F 3 "" H 8550 3450 50  0000 C CNN
-	1    8550 3450
+P 5750 5400
+F 0 "SW2" H 5900 5510 50  0000 C CNN
+F 1 "Herkon" H 5750 5320 50  0000 C CNN
+F 2 "Resistors_ThroughHole:R_Bare_Metal_Element_L21.3mm_W4.8mm_P20.30mm" H 5750 5400 50  0001 C CNN
+F 3 "" H 5750 5400 50  0000 C CNN
+	1    5750 5400
 	1    0    0    -1  
 $EndComp
-Text Label 8250 3450 2    60   ~ 0
+Text Label 5450 5400 2    60   ~ 0
 H1
 $Comp
-L GND #PWR20
+L power:GND #PWR20
 U 1 1 5974E707
-P 8850 3450
-F 0 "#PWR20" H 8850 3200 50  0001 C CNN
-F 1 "GND" H 8850 3300 50  0000 C CNN
-F 2 "" H 8850 3450 50  0001 C CNN
-F 3 "" H 8850 3450 50  0001 C CNN
-	1    8850 3450
+P 6050 5400
+F 0 "#PWR20" H 6050 5150 50  0001 C CNN
+F 1 "GND" H 6050 5250 50  0000 C CNN
+F 2 "" H 6050 5400 50  0001 C CNN
+F 3 "" H 6050 5400 50  0001 C CNN
+	1    6050 5400
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_01X01 J3
+L velocomp-rescue:CONN_01X01 J3
 U 1 1 5974E884
-P 8250 3900
-F 0 "J3" H 8250 4000 50  0000 C CNN
-F 1 "prg" V 8350 3900 50  0000 C CNN
-F 2 "mylibpcb:wirepad_mini" H 8250 3900 50  0001 C CNN
-F 3 "" H 8250 3900 50  0001 C CNN
-	1    8250 3900
+P 5450 5850
+F 0 "J3" H 5450 5950 50  0000 C CNN
+F 1 "prg" V 5550 5850 50  0000 C CNN
+F 2 "mylibpcb:wirepad_mini" H 5450 5850 50  0001 C CNN
+F 3 "" H 5450 5850 50  0001 C CNN
+	1    5450 5850
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	8650 3900 8450 3900
+	5850 5850 5650 5850
 $Comp
-L CONN_01X01 J4
+L velocomp-rescue:CONN_01X01 J4
 U 1 1 5974EBE6
-P 8250 4050
-F 0 "J4" H 8250 4150 50  0000 C CNN
-F 1 "h2" V 8350 4050 50  0000 C CNN
-F 2 "mylibpcb:wirepadme" H 8250 4050 50  0001 C CNN
-F 3 "" H 8250 4050 50  0001 C CNN
-	1    8250 4050
+P 5450 6000
+F 0 "J4" H 5450 6100 50  0000 C CNN
+F 1 "h2" V 5550 6000 50  0000 C CNN
+F 2 "mylibpcb:wirepadme" H 5450 6000 50  0001 C CNN
+F 3 "" H 5450 6000 50  0001 C CNN
+	1    5450 6000
 	-1   0    0    1   
 $EndComp
 $Comp
-L CONN_01X01 J2
+L velocomp-rescue:CONN_01X01 J2
 U 1 1 5974ECDB
-P 8250 3750
-F 0 "J2" H 8250 3850 50  0000 C CNN
-F 1 "h2_g" V 8350 3750 50  0000 C CNN
-F 2 "mylibpcb:wirepadme" H 8250 3750 50  0001 C CNN
-F 3 "" H 8250 3750 50  0001 C CNN
-	1    8250 3750
+P 5450 5700
+F 0 "J2" H 5450 5800 50  0000 C CNN
+F 1 "h2_g" V 5550 5700 50  0000 C CNN
+F 2 "mylibpcb:wirepadme" H 5450 5700 50  0001 C CNN
+F 3 "" H 5450 5700 50  0001 C CNN
+	1    5450 5700
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR19
+L power:GND #PWR19
 U 1 1 5974ED9E
-P 8450 3750
-F 0 "#PWR19" H 8450 3500 50  0001 C CNN
-F 1 "GND" H 8450 3600 50  0000 C CNN
-F 2 "" H 8450 3750 50  0000 C CNN
-F 3 "" H 8450 3750 50  0000 C CNN
-	1    8450 3750
+P 5650 5700
+F 0 "#PWR19" H 5650 5450 50  0001 C CNN
+F 1 "GND" H 5650 5550 50  0000 C CNN
+F 2 "" H 5650 5700 50  0000 C CNN
+F 3 "" H 5650 5700 50  0000 C CNN
+	1    5650 5700
 	0    -1   -1   0   
 $EndComp
 Text Label 2200 2550 2    60   ~ 0
 spk
 $Comp
-L Q_NMOS_GSD Q1
+L velocomp-rescue:Q_NMOS_GSD Q1
 U 1 1 599A8B44
 P 7600 1700
 F 0 "Q1" H 7800 1750 50  0000 L CNN
@@ -631,7 +588,7 @@ F 3 "" H 7600 1700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR18
+L power:GND #PWR18
 U 1 1 599A8CA0
 P 7700 2050
 F 0 "#PWR18" H 7700 1800 50  0001 C CNN
@@ -642,11 +599,11 @@ F 3 "" H 7700 2050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7700 1900 7700 2050
+	7700 1900 7700 2000
 Text Label 7400 1700 2    60   ~ 0
 spk
 $Comp
-L VDD #PWR17
+L power:VDD #PWR17
 U 1 1 599A8E61
 P 7700 1000
 F 0 "#PWR17" H 7700 850 50  0001 C CNN
@@ -659,7 +616,7 @@ $EndComp
 Wire Wire Line
 	7700 1200 7700 1500
 $Comp
-L LED_Small D1
+L velocomp-rescue:LED_Small D1
 U 1 1 599AABE4
 P 3100 4350
 F 0 "D1" H 3050 4475 50  0000 L CNN
@@ -673,77 +630,48 @@ Wire Wire Line
 	2950 4350 3000 4350
 Connection ~ 2950 3850
 $Comp
-L CONN_01X01 J5
+L velocomp-rescue:CONN_01X01 J5
 U 1 1 599ABC33
-P 8250 4350
-F 0 "J5" H 8250 4450 50  0000 C CNN
-F 1 "kn1" V 8350 4350 50  0000 C CNN
-F 2 "mylibpcb:wirepad_mini" H 8250 4350 50  0001 C CNN
-F 3 "" H 8250 4350 50  0001 C CNN
-	1    8250 4350
+P 5450 6300
+F 0 "J5" H 5450 6400 50  0000 C CNN
+F 1 "kn1" V 5550 6300 50  0000 C CNN
+F 2 "mylibpcb:wirepad_mini" H 5450 6300 50  0001 C CNN
+F 3 "" H 5450 6300 50  0001 C CNN
+	1    5450 6300
 	-1   0    0    1   
 $EndComp
-Text Label 8450 4350 0    60   ~ 0
+Text Label 5650 6300 0    60   ~ 0
 kn1
 $Comp
-L CONN_01X01 J6
+L velocomp-rescue:CONN_01X01 J6
 U 1 1 599ABDEC
-P 8250 4500
-F 0 "J6" H 8250 4600 50  0000 C CNN
-F 1 "kn1" V 8350 4500 50  0000 C CNN
-F 2 "mylibpcb:wirepad_mini" H 8250 4500 50  0001 C CNN
-F 3 "" H 8250 4500 50  0001 C CNN
-	1    8250 4500
+P 5450 6450
+F 0 "J6" H 5450 6550 50  0000 C CNN
+F 1 "kn1" V 5550 6450 50  0000 C CNN
+F 2 "mylibpcb:wirepad_mini" H 5450 6450 50  0001 C CNN
+F 3 "" H 5450 6450 50  0001 C CNN
+	1    5450 6450
 	-1   0    0    1   
 $EndComp
-Text Label 8450 4500 0    60   ~ 0
+Text Label 5650 6450 0    60   ~ 0
 kn1
 $Comp
-L R_Small R2
+L velocomp-rescue:R_Small R2
 U 1 1 59CFE398
-P 3500 5550
-F 0 "R2" H 3530 5570 50  0000 L CNN
-F 1 "1k" H 3530 5510 50  0000 L CNN
-F 2 "Resistors_SMD:R_0603_HandSoldering" H 3500 5550 50  0001 C CNN
-F 3 "" H 3500 5550 50  0001 C CNN
-	1    3500 5550
+P 2600 5650
+F 0 "R2" H 2630 5670 50  0000 L CNN
+F 1 "10k" H 2630 5610 50  0000 L CNN
+F 2 "Resistors_SMD:R_0603_HandSoldering" H 2600 5650 50  0001 C CNN
+F 3 "" H 2600 5650 50  0001 C CNN
+	1    2600 5650
 	0    1    1    0   
 $EndComp
+Wire Wire Line
+	2350 5650 2500 5650
+Wire Wire Line
+	2700 5650 3000 5650
 $Comp
-L R_Small R3
-U 1 1 59CFE42D
-P 3650 5750
-F 0 "R3" H 3680 5770 50  0000 L CNN
-F 1 "3k" H 3680 5710 50  0000 L CNN
-F 2 "Resistors_SMD:R_0603_HandSoldering" H 3650 5750 50  0001 C CNN
-F 3 "" H 3650 5750 50  0001 C CNN
-	1    3650 5750
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	3250 5550 3400 5550
-Wire Wire Line
-	3600 5550 3900 5550
-Wire Wire Line
-	3650 5650 3650 5550
-Connection ~ 3650 5550
-$Comp
-L GND #PWR8
-U 1 1 59CFE8F1
-P 3650 5950
-F 0 "#PWR8" H 3650 5700 50  0001 C CNN
-F 1 "GND" H 3650 5800 50  0000 C CNN
-F 2 "" H 3650 5950 50  0001 C CNN
-F 3 "" H 3650 5950 50  0001 C CNN
-	1    3650 5950
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3650 5850 3650 5950
-Text Notes 2500 5950 0    60   ~ 0
-Уточнить.! вроде модуль может работать до 4.2в - нам этого и надо! тогда просто транзистор ставим и все!
-$Comp
-L R_Small R6
+L velocomp-rescue:R_Small R6
 U 1 1 59CFF97F
 P 3200 4100
 F 0 "R6" H 3230 4120 50  0000 L CNN
@@ -757,12 +685,10 @@ Wire Wire Line
 	3200 4350 3200 4200
 Wire Wire Line
 	3200 3850 3200 4000
-Text Notes 5700 3200 0    60   ~ 0
-выключатель между выв 3мм и между крайними тоже\nвысота 5мм
 Wire Wire Line
 	4800 2650 5000 2650
 $Comp
-L R_Small R4
+L velocomp-rescue:R_Small R4
 U 1 1 59ECD965
 P 7450 1900
 F 0 "R4" H 7480 1920 50  0000 L CNN
@@ -780,7 +706,7 @@ Wire Wire Line
 Wire Wire Line
 	7450 1700 7400 1700
 $Comp
-L CONN_01X01 J7
+L velocomp-rescue:CONN_01X01 J7
 U 1 1 59F37556
 P 5050 2450
 F 0 "J7" H 5050 2550 50  0000 C CNN
@@ -793,7 +719,7 @@ $EndComp
 Wire Wire Line
 	4800 2450 4850 2450
 $Comp
-L CONN_01X01 J8
+L velocomp-rescue:CONN_01X01 J8
 U 1 1 59F37AC9
 P 1950 2350
 F 0 "J8" H 1950 2450 50  0000 C CNN
@@ -806,7 +732,7 @@ $EndComp
 Wire Wire Line
 	2200 2350 2150 2350
 $Comp
-L GND #PWR?
+L power:GND #PWR?
 U 1 1 5A57BC6E
 P 1900 4250
 F 0 "#PWR?" H 1900 4000 50  0001 C CNN
@@ -816,4 +742,43 @@ F 3 "" H 1900 4250 50  0000 C CNN
 	1    1900 4250
 	0    1    1    0   
 $EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5B064B05
+P 2500 4850
+F 0 "#PWR?" H 2500 4600 50  0001 C CNN
+F 1 "GND" H 2500 4700 50  0000 C CNN
+F 2 "" H 2500 4850 50  0000 C CNN
+F 3 "" H 2500 4850 50  0000 C CNN
+	1    2500 4850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4850 4250 5050 4250
+Wire Wire Line
+	6250 4250 6500 4250
+Wire Wire Line
+	3550 6600 3650 6600
+Wire Wire Line
+	3550 1200 3450 1200
+Wire Wire Line
+	1500 4500 1900 4500
+Wire Wire Line
+	1550 4600 1750 4600
+Wire Wire Line
+	1750 4600 1900 4600
+Wire Wire Line
+	5050 4650 5050 4700
+Wire Wire Line
+	4350 4250 4850 4250
+Wire Wire Line
+	5550 1600 5650 1600
+Wire Wire Line
+	5650 2050 5700 2050
+Wire Wire Line
+	5100 1950 5200 1950
+Wire Wire Line
+	2950 3850 3200 3850
+Wire Wire Line
+	7700 2000 7700 2050
 $EndSCHEMATC

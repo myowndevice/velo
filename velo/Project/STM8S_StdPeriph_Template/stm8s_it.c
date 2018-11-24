@@ -342,11 +342,13 @@ INTERRUPT_HANDLER(TIM1_CAP_COM_IRQHandler, 12)
 			c = UART1_ReceiveData8();
 			
 		if (RXready==FALSE) {
-			if (c == '\n' || c == '\r') {
+			if ((c == '\n') || (c == '\r')) {
 				RXready=TRUE;
+				return;
 			}
 			else
 				RXbuff[RXtek] = c;
+				
 			RXtek++;
 			if (RXtek==5) RXready=TRUE;
 		}

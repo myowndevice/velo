@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="D">
   <design>
-    <source>/home/hp/kicad/velo_2/velocomp.sch</source>
-    <date>Сб 14 окт 2017 15:28:04</date>
-    <tool>Eeschema 4.0.7</tool>
+    <source>/home/hp/kicad/velo/velo_2/velocomp.sch</source>
+    <date>Ср 07 ноя 2018 16:43:51</date>
+    <tool>Eeschema 5.0.1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title/>
@@ -22,261 +22,222 @@
     <comp ref="BT1">
       <value>LIR2450</value>
       <footprint>Pin_Headers:Pin_Header_Straight_1x02</footprint>
-      <libsource lib="velocomp-cache" part="Battery-RESCUE-velocomp"/>
+      <libsource lib="velocomp-rescue" part="Battery-RESCUE-velocomp" description=""/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>57779297</tstamp>
     </comp>
     <comp ref="C1">
       <value>100nf</value>
       <footprint>Capacitors_SMD:C_0603_HandSoldering</footprint>
-      <libsource lib="device" part="C_Small"/>
+      <libsource lib="velocomp-rescue" part="C_Small" description=""/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5778E0DA</tstamp>
     </comp>
     <comp ref="D2">
       <value>NCP603</value>
       <footprint>TO_SOT_Packages_SMD:SOT-23-5</footprint>
-      <libsource lib="velocomp-rescue" part="NCP603-RESCUE-velocomp"/>
+      <libsource lib="velocomp-rescue" part="NCP603-RESCUE-velocomp" description=""/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>577CAC98</tstamp>
     </comp>
     <comp ref="C2">
-      <value>1u</value>
+      <value>1uf</value>
       <footprint>Capacitors_SMD:C_0805_HandSoldering</footprint>
-      <libsource lib="device" part="C_Small"/>
+      <libsource lib="velocomp-rescue" part="C_Small" description=""/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>577CAECD</tstamp>
     </comp>
     <comp ref="C4">
-      <value>1u</value>
+      <value>1uf</value>
       <footprint>Capacitors_SMD:C_0805_HandSoldering</footprint>
-      <libsource lib="device" part="C_Small"/>
+      <libsource lib="velocomp-rescue" part="C_Small" description=""/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>577CB359</tstamp>
     </comp>
     <comp ref="U1">
       <value>BK3231</value>
-      <footprint>mylibpcb:hc-05</footprint>
-      <libsource lib="mylibkicad" part="HC-05"/>
+      <footprint>myowndevice:hc-05</footprint>
+      <libsource lib="mylibkicad" part="HC-05" description=""/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>57ACC14B</tstamp>
     </comp>
     <comp ref="C7">
       <value>10uf</value>
       <footprint>Capacitors_SMD:C_0805_HandSoldering</footprint>
-      <libsource lib="device" part="C_Small"/>
+      <libsource lib="velocomp-rescue" part="C_Small" description=""/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>57ACDA8E</tstamp>
     </comp>
     <comp ref="SP1">
       <value>HC0903A</value>
-      <footprint>Buzzers_Beepers:MagneticBuzzer_ProSignal_ABI-009-RC</footprint>
-      <libsource lib="velocomp-cache" part="SPEAKER"/>
+      <footprint>myowndevice:hc0903a</footprint>
+      <libsource lib="velocomp-rescue" part="SPEAKER" description=""/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>57AD7EDB</tstamp>
     </comp>
     <comp ref="IC1">
       <value>STM8S003F3P</value>
       <footprint>Housings_SSOP:SSOP-20_4.4x6.5mm_Pitch0.65mm</footprint>
-      <libsource lib="stm8" part="STM8S003F3P"/>
+      <libsource lib="velocomp-rescue" part="STM8S003F3P" description=""/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>57AD9349</tstamp>
     </comp>
     <comp ref="C5">
       <value>1uf</value>
       <footprint>Capacitors_SMD:C_0805_HandSoldering</footprint>
-      <libsource lib="device" part="C_Small"/>
+      <libsource lib="velocomp-rescue" part="C_Small" description=""/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>57AD94D5</tstamp>
     </comp>
     <comp ref="U2">
       <value>TP4056</value>
       <footprint>Housings_SOIC:SOIC-8-1EP_3.9x4.9mm_Pitch1.27mm</footprint>
-      <libsource lib="mylibkicad" part="TP4056"/>
+      <libsource lib="mylibkicad" part="TP4056" description=""/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>57AD9C31</tstamp>
     </comp>
     <comp ref="R1">
       <value>10k</value>
       <footprint>Resistors_SMD:R_0603_HandSoldering</footprint>
-      <libsource lib="device" part="R_Small"/>
+      <libsource lib="velocomp-rescue" part="R_Small" description=""/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>57AD9EE1</tstamp>
     </comp>
     <comp ref="C3">
       <value>10uf</value>
       <footprint>Capacitors_SMD:C_0805_HandSoldering</footprint>
-      <libsource lib="device" part="C_Small"/>
+      <libsource lib="velocomp-rescue" part="C_Small" description=""/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>57ADA04E</tstamp>
     </comp>
     <comp ref="SW1">
       <value>SW_PUSH</value>
       <footprint>Buttons_Switches_ThroughHole:SW_Tactile_SKHH_Angled</footprint>
-      <libsource lib="velocomp-cache" part="SW_PUSH"/>
+      <libsource lib="velocomp-rescue" part="SW_PUSH" description=""/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>57ADB62C</tstamp>
     </comp>
     <comp ref="Y1">
       <value>8Mgh</value>
       <footprint>Crystals:Crystal_HC49-U_Vertical</footprint>
-      <libsource lib="device" part="Crystal_Small"/>
+      <libsource lib="velocomp-rescue" part="Crystal_Small" description=""/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>57ADDD5E</tstamp>
     </comp>
     <comp ref="C6">
       <value>22pf</value>
       <footprint>Capacitors_SMD:C_0603_HandSoldering</footprint>
-      <libsource lib="device" part="C_Small"/>
+      <libsource lib="velocomp-rescue" part="C_Small" description=""/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>57ADDE40</tstamp>
     </comp>
     <comp ref="C8">
       <value>22pf</value>
       <footprint>Capacitors_SMD:C_0603_HandSoldering</footprint>
-      <libsource lib="device" part="C_Small"/>
+      <libsource lib="velocomp-rescue" part="C_Small" description=""/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>57ADDEBF</tstamp>
     </comp>
     <comp ref="J1">
       <value>USB_B</value>
-      <footprint>mylibpcb:usb5s</footprint>
-      <libsource lib="conn" part="USB_B"/>
+      <footprint>myowndevice:usb5s</footprint>
+      <libsource lib="velocomp-rescue" part="USB_B" description=""/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5974D90E</tstamp>
     </comp>
     <comp ref="SW2">
       <value>Herkon</value>
       <footprint>Resistors_ThroughHole:R_Bare_Metal_Element_L21.3mm_W4.8mm_P20.30mm</footprint>
-      <libsource lib="velocomp-cache" part="SW_PUSH"/>
+      <libsource lib="velocomp-rescue" part="SW_PUSH" description=""/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5974E5A6</tstamp>
     </comp>
     <comp ref="J3">
       <value>prg</value>
       <footprint>mylibpcb:wirepad_mini</footprint>
-      <libsource lib="velocomp-cache" part="CONN_01X01"/>
+      <libsource lib="velocomp-rescue" part="CONN_01X01" description=""/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5974E884</tstamp>
     </comp>
     <comp ref="J4">
       <value>h2</value>
       <footprint>mylibpcb:wirepadme</footprint>
-      <libsource lib="velocomp-cache" part="CONN_01X01"/>
+      <libsource lib="velocomp-rescue" part="CONN_01X01" description=""/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5974EBE6</tstamp>
     </comp>
     <comp ref="J2">
       <value>h2_g</value>
       <footprint>mylibpcb:wirepadme</footprint>
-      <libsource lib="velocomp-cache" part="CONN_01X01"/>
+      <libsource lib="velocomp-rescue" part="CONN_01X01" description=""/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5974ECDB</tstamp>
     </comp>
     <comp ref="Q1">
       <value>2N7002</value>
       <footprint>TO_SOT_Packages_SMD:SOT-23</footprint>
-      <libsource lib="device" part="Q_NMOS_GSD"/>
+      <libsource lib="velocomp-rescue" part="Q_NMOS_GSD" description=""/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>599A8B44</tstamp>
     </comp>
     <comp ref="D1">
       <value>LED_Small</value>
       <footprint>LEDs:LED_0603_HandSoldering</footprint>
-      <libsource lib="device" part="LED_Small"/>
+      <libsource lib="velocomp-rescue" part="LED_Small" description=""/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>599AABE4</tstamp>
     </comp>
     <comp ref="J5">
       <value>kn1</value>
       <footprint>mylibpcb:wirepad_mini</footprint>
-      <libsource lib="velocomp-cache" part="CONN_01X01"/>
+      <libsource lib="velocomp-rescue" part="CONN_01X01" description=""/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>599ABC33</tstamp>
     </comp>
     <comp ref="J6">
       <value>kn1</value>
       <footprint>mylibpcb:wirepad_mini</footprint>
-      <libsource lib="velocomp-cache" part="CONN_01X01"/>
+      <libsource lib="velocomp-rescue" part="CONN_01X01" description=""/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>599ABDEC</tstamp>
     </comp>
     <comp ref="R2">
-      <value>300</value>
+      <value>10k</value>
       <footprint>Resistors_SMD:R_0603_HandSoldering</footprint>
-      <libsource lib="device" part="R_Small"/>
+      <libsource lib="velocomp-rescue" part="R_Small" description=""/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>59CFE398</tstamp>
-    </comp>
-    <comp ref="R3">
-      <value>1k</value>
-      <footprint>Resistors_SMD:R_0603_HandSoldering</footprint>
-      <libsource lib="device" part="R_Small"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>59CFE42D</tstamp>
     </comp>
     <comp ref="R6">
       <value>1k</value>
       <footprint>Resistors_SMD:R_0603_HandSoldering</footprint>
-      <libsource lib="device" part="R_Small"/>
+      <libsource lib="velocomp-rescue" part="R_Small" description=""/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>59CFF97F</tstamp>
     </comp>
+    <comp ref="R4">
+      <value>10k</value>
+      <footprint>Resistors_SMD:R_0603_HandSoldering</footprint>
+      <libsource lib="velocomp-rescue" part="R_Small" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>59ECD965</tstamp>
+    </comp>
+    <comp ref="J7">
+      <value>ind</value>
+      <footprint>mylibpcb:wirepad_mini</footprint>
+      <libsource lib="velocomp-rescue" part="CONN_01X01" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>59F37556</tstamp>
+    </comp>
+    <comp ref="J8">
+      <value>ind</value>
+      <footprint>mylibpcb:wirepad_mini</footprint>
+      <libsource lib="velocomp-rescue" part="CONN_01X01" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>59F37AC9</tstamp>
+    </comp>
   </components>
   <libparts>
-    <libpart lib="velocomp-cache" part="Battery-RESCUE-velocomp">
-      <fields>
-        <field name="Reference">BT</field>
-        <field name="Value">Battery-RESCUE-velocomp</field>
-      </fields>
-      <pins>
-        <pin num="1" name="~" type="passive"/>
-        <pin num="2" name="~" type="passive"/>
-      </pins>
-    </libpart>
-    <libpart lib="velocomp-cache" part="CONN_01X01">
-      <footprints>
-        <fp>Pin_Header_Straight_1X*</fp>
-        <fp>Pin_Header_Angled_1X*</fp>
-        <fp>Socket_Strip_Straight_1X*</fp>
-        <fp>Socket_Strip_Angled_1X*</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">J</field>
-        <field name="Value">CONN_01X01</field>
-      </fields>
-      <pins>
-        <pin num="1" name="P1" type="passive"/>
-      </pins>
-    </libpart>
-    <libpart lib="device" part="C_Small">
-      <description>Unpolarized capacitor</description>
-      <footprints>
-        <fp>C_*</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">C</field>
-        <field name="Value">C_Small</field>
-      </fields>
-      <pins>
-        <pin num="1" name="~" type="passive"/>
-        <pin num="2" name="~" type="passive"/>
-      </pins>
-    </libpart>
-    <libpart lib="device" part="Crystal_Small">
-      <description>Two pin crystal, small symbol</description>
-      <footprints>
-        <fp>Crystal*</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">Y</field>
-        <field name="Value">Crystal_Small</field>
-      </fields>
-      <pins>
-        <pin num="1" name="1" type="passive"/>
-        <pin num="2" name="2" type="passive"/>
-      </pins>
-    </libpart>
     <libpart lib="mylibkicad" part="HC-05">
       <fields>
         <field name="Reference">U</field>
@@ -293,8 +254,75 @@
         <pin num="24" name="LED" type="output"/>
       </pins>
     </libpart>
-    <libpart lib="device" part="LED_Small">
-      <description>LED, small symbol</description>
+    <libpart lib="mylibkicad" part="TP4056">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TP4056</field>
+      </fields>
+      <pins>
+        <pin num="1" name="TEMP" type="input"/>
+        <pin num="2" name="PROG" type="input"/>
+        <pin num="3" name="GND" type="power_in"/>
+        <pin num="4" name="VDD" type="power_in"/>
+        <pin num="5" name="BAT" type="power_out"/>
+        <pin num="6" name="STBY" type="output"/>
+        <pin num="7" name="CHRG" type="output"/>
+        <pin num="8" name="CE" type="input"/>
+        <pin num="9" name="GND" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="velocomp-rescue" part="Battery-RESCUE-velocomp">
+      <fields>
+        <field name="Reference">BT</field>
+        <field name="Value">Battery-RESCUE-velocomp</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="velocomp-rescue" part="CONN_01X01">
+      <footprints>
+        <fp>Pin_Header_Straight_1X*</fp>
+        <fp>Pin_Header_Angled_1X*</fp>
+        <fp>Socket_Strip_Straight_1X*</fp>
+        <fp>Socket_Strip_Angled_1X*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">CONN_01X01</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="velocomp-rescue" part="C_Small">
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_Small</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="velocomp-rescue" part="Crystal_Small">
+      <footprints>
+        <fp>Crystal*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">Y</field>
+        <field name="Value">Crystal_Small</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="velocomp-rescue" part="LED_Small">
       <footprints>
         <fp>LED-*</fp>
         <fp>LED_*</fp>
@@ -321,8 +349,7 @@
         <pin num="5" name="Vout" type="input"/>
       </pins>
     </libpart>
-    <libpart lib="device" part="Q_NMOS_GSD">
-      <description>Transistor N-MOSFETwith substrate diode (general)</description>
+    <libpart lib="velocomp-rescue" part="Q_NMOS_GSD">
       <fields>
         <field name="Reference">Q</field>
         <field name="Value">Q_NMOS_GSD</field>
@@ -333,8 +360,7 @@
         <pin num="3" name="D" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="device" part="R_Small">
-      <description>Resistor, small symbol</description>
+    <libpart lib="velocomp-rescue" part="R_Small">
       <footprints>
         <fp>R_*</fp>
       </footprints>
@@ -347,7 +373,7 @@
         <pin num="2" name="~" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="velocomp-cache" part="SPEAKER">
+    <libpart lib="velocomp-rescue" part="SPEAKER">
       <fields>
         <field name="Reference">SP</field>
         <field name="Value">SPEAKER</field>
@@ -357,9 +383,7 @@
         <pin num="2" name="2" type="input"/>
       </pins>
     </libpart>
-    <libpart lib="stm8" part="STM8S003F3P">
-      <description>16MHz, 8K Flash, 1k RAM, 128 EEPROM, USART, I2C, SPI, TSSOP20</description>
-      <docs>http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/DM00024550.pdf</docs>
+    <libpart lib="velocomp-rescue" part="STM8S003F3P">
       <footprints>
         <fp>TSSOP*</fp>
       </footprints>
@@ -391,7 +415,7 @@
         <pin num="20" name="PD3/AIN4/TIM2_CH2" type="BiDi"/>
       </pins>
     </libpart>
-    <libpart lib="velocomp-cache" part="SW_PUSH">
+    <libpart lib="velocomp-rescue" part="SW_PUSH">
       <fields>
         <field name="Reference">SW</field>
         <field name="Value">SW_PUSH</field>
@@ -401,25 +425,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="mylibkicad" part="TP4056">
-      <fields>
-        <field name="Reference">U</field>
-        <field name="Value">TP4056</field>
-      </fields>
-      <pins>
-        <pin num="1" name="TEMP" type="input"/>
-        <pin num="2" name="PROG" type="input"/>
-        <pin num="3" name="GND" type="power_in"/>
-        <pin num="4" name="VDD" type="power_in"/>
-        <pin num="5" name="BAT" type="power_out"/>
-        <pin num="6" name="STBY" type="output"/>
-        <pin num="7" name="CHRG" type="output"/>
-        <pin num="8" name="CE" type="input"/>
-        <pin num="9" name="GND" type="power_in"/>
-      </pins>
-    </libpart>
-    <libpart lib="conn" part="USB_B">
-      <description>USB Type B connector</description>
+    <libpart lib="velocomp-rescue" part="USB_B">
       <footprints>
         <fp>USB*</fp>
       </footprints>
@@ -437,182 +443,170 @@
     </libpart>
   </libparts>
   <libraries>
-    <library logical="velocomp-rescue">
-      <uri>/home/hp/kicad/velo_2/velocomp-rescue.lib</uri>
-    </library>
-    <library logical="device">
-      <uri>/usr/share/kicad/library/device.lib</uri>
-    </library>
-    <library logical="conn">
-      <uri>/usr/share/kicad/library/conn.lib</uri>
-    </library>
-    <library logical="stm8">
-      <uri>/usr/share/kicad/library/stm8.lib</uri>
-    </library>
     <library logical="mylibkicad">
       <uri>/home/hp/kicadlib/mylibkicad.lib</uri>
     </library>
-    <library logical="velocomp-cache">
-      <uri>/home/hp/kicad/velo_2/velocomp-cache.lib</uri>
+    <library logical="velocomp-rescue">
+      <uri>/home/hp/kicad/velo/velo_2/velocomp-rescue.lib</uri>
     </library>
   </libraries>
   <nets>
-    <net code="1" name="GND">
-      <node ref="C1" pin="2"/>
-      <node ref="BT1" pin="2"/>
-      <node ref="C7" pin="2"/>
-      <node ref="U1" pin="22"/>
-      <node ref="U1" pin="21"/>
-      <node ref="Q1" pin="2"/>
-      <node ref="J2" pin="1"/>
-      <node ref="SW2" pin="2"/>
-      <node ref="J1" pin="5"/>
-      <node ref="J1" pin="4"/>
-      <node ref="SW1" pin="2"/>
-      <node ref="U2" pin="9"/>
-      <node ref="U2" pin="3"/>
-      <node ref="C5" pin="2"/>
-      <node ref="IC1" pin="7"/>
-      <node ref="C8" pin="1"/>
-      <node ref="C6" pin="1"/>
-      <node ref="U1" pin="13"/>
-      <node ref="C3" pin="2"/>
-      <node ref="R1" pin="2"/>
-      <node ref="C4" pin="2"/>
-      <node ref="C2" pin="2"/>
-      <node ref="D2" pin="2"/>
-      <node ref="R3" pin="1"/>
+    <net code="1" name="/5v">
+      <node ref="R6" pin="2"/>
+      <node ref="U2" pin="4"/>
+      <node ref="U2" pin="8"/>
+      <node ref="C3" pin="1"/>
+      <node ref="J1" pin="1"/>
     </net>
-    <net code="2" name="Net-(C8-Pad2)">
-      <node ref="IC1" pin="6"/>
-      <node ref="Y1" pin="2"/>
-      <node ref="C8" pin="2"/>
-    </net>
-    <net code="3" name="Net-(C6-Pad2)">
-      <node ref="C6" pin="2"/>
-      <node ref="IC1" pin="5"/>
-      <node ref="Y1" pin="1"/>
-    </net>
-    <net code="4" name="/bluen">
+    <net code="2" name="/bluen">
       <node ref="IC1" pin="13"/>
       <node ref="D2" pin="3"/>
     </net>
-    <net code="5" name="/PRG">
-      <node ref="J3" pin="1"/>
+    <net code="3" name="/PRG">
       <node ref="IC1" pin="18"/>
+      <node ref="J3" pin="1"/>
     </net>
-    <net code="6" name="/kn1">
+    <net code="4" name="/kn1">
+      <node ref="IC1" pin="20"/>
       <node ref="J6" pin="1"/>
       <node ref="J5" pin="1"/>
       <node ref="SW1" pin="1"/>
-      <node ref="IC1" pin="20"/>
     </net>
-    <net code="7" name="Net-(C5-Pad1)">
-      <node ref="C5" pin="1"/>
-      <node ref="IC1" pin="8"/>
+    <net code="5" name="Net-(J1-Pad2)">
+      <node ref="J1" pin="2"/>
     </net>
-    <net code="8" name="Net-(R1-Pad1)">
-      <node ref="U2" pin="2"/>
-      <node ref="R1" pin="1"/>
+    <net code="6" name="Net-(J1-Pad3)">
+      <node ref="J1" pin="3"/>
     </net>
-    <net code="9" name="VDD">
-      <node ref="SP1" pin="2"/>
+    <net code="7" name="GND">
+      <node ref="C7" pin="2"/>
+      <node ref="BT1" pin="2"/>
+      <node ref="C1" pin="2"/>
+      <node ref="D2" pin="2"/>
+      <node ref="C2" pin="2"/>
+      <node ref="U1" pin="22"/>
+      <node ref="U1" pin="21"/>
+      <node ref="Q1" pin="2"/>
+      <node ref="U1" pin="13"/>
+      <node ref="C3" pin="2"/>
+      <node ref="R1" pin="2"/>
+      <node ref="U2" pin="9"/>
+      <node ref="U2" pin="1"/>
+      <node ref="C5" pin="2"/>
+      <node ref="IC1" pin="7"/>
+      <node ref="U2" pin="3"/>
+      <node ref="C8" pin="1"/>
+      <node ref="C6" pin="1"/>
+      <node ref="SW1" pin="2"/>
+      <node ref="C4" pin="2"/>
+      <node ref="J2" pin="1"/>
+      <node ref="R4" pin="2"/>
+      <node ref="J1" pin="4"/>
+      <node ref="J1" pin="5"/>
+      <node ref="SW2" pin="2"/>
+    </net>
+    <net code="8" name="/H1">
+      <node ref="SW2" pin="1"/>
+      <node ref="IC1" pin="16"/>
+    </net>
+    <net code="9" name="/bluevdd">
+      <node ref="U1" pin="12"/>
+      <node ref="D2" pin="5"/>
+      <node ref="C4" pin="1"/>
+    </net>
+    <net code="10" name="VDD">
       <node ref="C2" pin="1"/>
-      <node ref="D2" pin="1"/>
-      <node ref="C1" pin="1"/>
-      <node ref="BT1" pin="1"/>
-      <node ref="U2" pin="5"/>
       <node ref="IC1" pin="9"/>
+      <node ref="C1" pin="1"/>
+      <node ref="SP1" pin="2"/>
       <node ref="C7" pin="1"/>
+      <node ref="U2" pin="5"/>
+      <node ref="BT1" pin="1"/>
+      <node ref="D2" pin="1"/>
     </net>
-    <net code="10" name="Net-(Q1-Pad3)">
+    <net code="11" name="Net-(C8-Pad2)">
+      <node ref="Y1" pin="2"/>
+      <node ref="C8" pin="2"/>
+      <node ref="IC1" pin="6"/>
+    </net>
+    <net code="12" name="Net-(C6-Pad2)">
+      <node ref="IC1" pin="5"/>
+      <node ref="C6" pin="2"/>
+      <node ref="Y1" pin="1"/>
+    </net>
+    <net code="13" name="Net-(IC1-Pad11)">
+      <node ref="IC1" pin="11"/>
+      <node ref="J7" pin="1"/>
+    </net>
+    <net code="14" name="Net-(IC1-Pad19)">
+      <node ref="J8" pin="1"/>
+      <node ref="IC1" pin="19"/>
+    </net>
+    <net code="15" name="Net-(D1-Pad2)">
+      <node ref="R6" pin="1"/>
+      <node ref="D1" pin="2"/>
+    </net>
+    <net code="16" name="Net-(Q1-Pad3)">
       <node ref="SP1" pin="1"/>
       <node ref="Q1" pin="3"/>
     </net>
-    <net code="11" name="Net-(D1-Pad1)">
-      <node ref="U2" pin="7"/>
+    <net code="17" name="Net-(D1-Pad1)">
       <node ref="D1" pin="1"/>
+      <node ref="U2" pin="7"/>
     </net>
-    <net code="12" name="/TX">
-      <node ref="IC1" pin="2"/>
-      <node ref="R2" pin="2"/>
-    </net>
-    <net code="13" name="Net-(R2-Pad1)">
-      <node ref="U1" pin="2"/>
+    <net code="18" name="Net-(R2-Pad1)">
       <node ref="R2" pin="1"/>
-      <node ref="R3" pin="2"/>
+      <node ref="U1" pin="2"/>
     </net>
-    <net code="14" name="Net-(D1-Pad2)">
-      <node ref="D1" pin="2"/>
-      <node ref="R6" pin="1"/>
-    </net>
-    <net code="15" name="/5v">
-      <node ref="J1" pin="1"/>
-      <node ref="U2" pin="8"/>
-      <node ref="R6" pin="2"/>
-      <node ref="U2" pin="4"/>
-      <node ref="C3" pin="1"/>
-    </net>
-    <net code="16" name="Net-(J1-Pad2)">
-      <node ref="J1" pin="2"/>
-    </net>
-    <net code="17" name="Net-(J1-Pad3)">
-      <node ref="J1" pin="3"/>
-    </net>
-    <net code="18" name="/H1">
-      <node ref="IC1" pin="16"/>
-      <node ref="SW2" pin="1"/>
-    </net>
-    <net code="19" name="/spk">
-      <node ref="IC1" pin="1"/>
-      <node ref="Q1" pin="1"/>
-    </net>
-    <net code="20" name="/RX">
+    <net code="19" name="/RX">
       <node ref="IC1" pin="3"/>
       <node ref="U1" pin="1"/>
     </net>
-    <net code="21" name="Net-(U1-Pad11)">
+    <net code="20" name="Net-(U1-Pad11)">
       <node ref="U1" pin="11"/>
     </net>
-    <net code="22" name="/con">
-      <node ref="IC1" pin="10"/>
+    <net code="21" name="/con">
       <node ref="U1" pin="24"/>
+      <node ref="IC1" pin="10"/>
     </net>
-    <net code="23" name="Net-(IC1-Pad4)">
-      <node ref="IC1" pin="4"/>
+    <net code="22" name="/spk">
+      <node ref="R4" pin="1"/>
+      <node ref="Q1" pin="1"/>
+      <node ref="IC1" pin="1"/>
     </net>
-    <net code="24" name="Net-(D2-Pad4)">
-      <node ref="D2" pin="4"/>
-    </net>
-    <net code="25" name="/bluevdd">
-      <node ref="C4" pin="1"/>
-      <node ref="U1" pin="12"/>
-      <node ref="D2" pin="5"/>
-    </net>
-    <net code="26" name="Net-(U2-Pad1)">
-      <node ref="U2" pin="1"/>
-    </net>
-    <net code="27" name="Net-(U2-Pad6)">
-      <node ref="U2" pin="6"/>
-    </net>
-    <net code="28" name="Net-(IC1-Pad19)">
-      <node ref="IC1" pin="19"/>
-    </net>
-    <net code="29" name="Net-(IC1-Pad11)">
-      <node ref="IC1" pin="11"/>
-    </net>
-    <net code="30" name="Net-(IC1-Pad12)">
+    <net code="23" name="Net-(IC1-Pad12)">
       <node ref="IC1" pin="12"/>
     </net>
-    <net code="31" name="Net-(IC1-Pad14)">
+    <net code="24" name="Net-(IC1-Pad14)">
       <node ref="IC1" pin="14"/>
     </net>
-    <net code="32" name="Net-(IC1-Pad15)">
+    <net code="25" name="Net-(IC1-Pad15)">
       <node ref="IC1" pin="15"/>
     </net>
-    <net code="33" name="/H2">
-      <node ref="J4" pin="1"/>
+    <net code="26" name="/H2">
       <node ref="IC1" pin="17"/>
+      <node ref="J4" pin="1"/>
+    </net>
+    <net code="27" name="/TX">
+      <node ref="IC1" pin="2"/>
+      <node ref="R2" pin="2"/>
+    </net>
+    <net code="28" name="Net-(D2-Pad4)">
+      <node ref="D2" pin="4"/>
+    </net>
+    <net code="29" name="Net-(U2-Pad6)">
+      <node ref="U2" pin="6"/>
+    </net>
+    <net code="30" name="Net-(C5-Pad1)">
+      <node ref="C5" pin="1"/>
+      <node ref="IC1" pin="8"/>
+    </net>
+    <net code="31" name="Net-(R1-Pad1)">
+      <node ref="U2" pin="2"/>
+      <node ref="R1" pin="1"/>
+    </net>
+    <net code="32" name="Net-(IC1-Pad4)">
+      <node ref="IC1" pin="4"/>
     </net>
   </nets>
 </export>

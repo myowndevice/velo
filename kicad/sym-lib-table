@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name velocomp-rescue)(type Legacy)(uri ${KIPRJMOD}/velocomp-rescue.lib)(options "")(descr ""))
+)
